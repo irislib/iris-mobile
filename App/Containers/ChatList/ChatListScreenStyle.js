@@ -9,17 +9,17 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+    borderBottomWidth: 1,
+    borderColor: '#eee',
   },
   title: {
     fontSize: 32,
   },
   text: {
     ...Fonts.style.normal,
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 5,
   },
   instructions: {

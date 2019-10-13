@@ -6,6 +6,7 @@ import ExampleActions from 'App/Stores/Example/Actions'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
 import Style from './ChatListScreenStyle'
 import { Images } from 'App/Theme'
+import gun from 'App/Services/GunService'
 
 /**
  * This is an example of a container component.
@@ -14,21 +15,6 @@ import { Images } from 'App/Theme'
  * Feel free to remove it.
  */
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
-
 function Item({ title }) {
   return (
     <TouchableWithoutFeedback>
@@ -36,12 +22,26 @@ function Item({ title }) {
         <Text style={Style.title}>{title}</Text>
       </View>
     </TouchableWithoutFeedback>
-  );
+  )
 }
 
 class ChatListScreen extends React.Component {
+  state = {
+    chats: []
+  }
+
   componentDidMount() {
     this._fetchUser()
+    gun.user().get('chat').map().once((data, key) => {
+      const chat = {text: key.substr(0,10) + '...', key}
+      /* chat.identity = this.props.iris.get('keyID', key)
+      chat.identity.gun.get('attrs').open(res => {
+        console.log(1111, res)
+      }) */
+      this.setState(previousState => (
+        { chats: previousState.chats.concat(chat) }
+      ))
+    })
   }
 
   static navigationOptions = {
@@ -62,15 +62,15 @@ class ChatListScreen extends React.Component {
           <ActivityIndicator size="large" color="#0000ff" />
         ) : (
           <FlatList
-            data={DATA}
+            data={this.state.chats}
             renderItem={({ item }) => (
-              <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen')}>
+              <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', {key:item.key})}>
                 <View style={Style.item}>
-                  <Text style={Style.title}>{item.title}</Text>
+                  <Text style={Style.text}>{item.key}</Text>
                 </View>
               </TouchableWithoutFeedback>
             )}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.key}
           />
         )}
       </View>

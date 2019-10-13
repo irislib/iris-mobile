@@ -20,11 +20,12 @@ class ChatScreen extends React.Component {
   }
 
   componentDidMount() {
+    const key = this.props.navigation.getParam('key', 'nobody')
     this.setState({
       messages: [
         {
           _id: 1,
-          text: 'Hello developer',
+          text: 'Hello developer, I am ' + key,
           createdAt: new Date(),
           user: {
             _id: 2,
