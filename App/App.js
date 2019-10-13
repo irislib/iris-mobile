@@ -4,7 +4,16 @@ import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
 import RootScreen from './Containers/Root/RootScreen'
 
+import {Gun, SEA} from 'gun';
+import GunOpen from 'gun/lib/open';
+import Iris from 'iris-lib';
+import PrivKey from './privateKey.json';
+
 const { store, persistor } = createStore()
+const gun = new Gun(['https://gun-us.herokuapp.com/gun']);
+const user = gun.user();
+user.auth(PrivKey);
+const iris = new Iris.Index({gun, keypair: PrivKey});
 
 export default class App extends Component {
   render() {
