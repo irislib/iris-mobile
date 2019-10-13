@@ -1,10 +1,22 @@
 import React from 'react'
+import { Button } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { connect } from 'react-redux'
 
 class ChatScreen extends React.Component {
   state = {
     messages: [],
+  }
+
+  static navigationOptions = {
+    title: 'Chat',
+    headerRight: (
+      <Button
+        onPress={() => alert('This is a button!')}
+        title="Back"
+        color="#fff"
+      />
+    ),
   }
 
   componentDidMount() {
