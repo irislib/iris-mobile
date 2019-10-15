@@ -2,6 +2,9 @@ import React from 'react'
 import { Button } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { connect } from 'react-redux'
+import { Chat } from 'iris-lib'
+import PrivKey from 'App/privateKey.json';
+import gun from 'App/Services/GunService'
 
 class ChatScreen extends React.Component {
   state = {
@@ -21,6 +24,21 @@ class ChatScreen extends React.Component {
 
   componentDidMount() {
     const key = this.props.navigation.getParam('key', 'nobody')
+    const onMessage = (msg, info) => {
+      this.setState(previousState => {
+        msg.createdAt = new Date(msg.time)
+        msg._id = msg.time
+        msg.user = {
+          name: msg.author,
+          _id: (info.selfAuthored ? 1 : 2),
+        }
+        newMessages = previousState.messages.concat(msg)
+        newMessages.sort((a, b) => b.createdAt - a.createdAt)
+        return { messages: newMessages }
+      });
+    }
+    const chat = new Chat({gun, key: PrivKey, participants: key, onMessage});
+    /*
     this.setState({
       messages: [
         {
@@ -35,6 +53,7 @@ class ChatScreen extends React.Component {
         },
       ],
     })
+    */
   }
 
   onSend(messages = []) {
@@ -47,6 +66,7 @@ class ChatScreen extends React.Component {
     return (
       <GiftedChat
         messages={this.state.messages}
+        renderUsernameOnMessage={true}
         onSend={messages => this.onSend(messages)}
         user={{
           _id: 1,
