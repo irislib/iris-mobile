@@ -3,6 +3,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation'
 import ChatListScreen from 'App/Containers/ChatList/ChatListScreen'
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
 import ChatScreen from 'App/Containers/Chat/ChatScreen'
+import LoginScreen from 'App/Containers/Login/LoginScreen'
 
 /**
  * The root screen contains the application's navigation.
@@ -16,8 +17,9 @@ const StackNavigator = createStackNavigator(
     SplashScreen: SplashScreen,
     // The main application screen is our "ChatListScreen". Feel free to replace it with your
     // own screen and remove the example.
-    MainScreen: ChatListScreen,
+    MainScreen: LoginScreen,
     ChatScreen: ChatScreen,
+    ChatListScreen: ChatListScreen,
   },
   {
     // By default the application will show the splash screen

@@ -34,6 +34,10 @@ class ChatListScreen extends React.Component {
     chats: [],
   }
 
+  static navigationOptions = {
+
+  }
+
   componentDidMount() {
     this._fetchUser()
 

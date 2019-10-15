@@ -1,6 +1,5 @@
 import { put, call } from 'redux-saga/effects'
 import ExampleActions from 'App/Stores/Example/Actions'
-import { userService } from 'App/Services/UserService'
 
 /**
  * A saga can contain multiple functions.
@@ -11,6 +10,8 @@ import { userService } from 'App/Services/UserService'
 export function* fetchUser() {
   // Dispatch a redux action using `put()`
   // @see https://redux-saga.js.org/docs/basics/DispatchingActions.html
+  yield put(ExampleActions.fetchUserSuccess({}))
+  /*
   yield put(ExampleActions.fetchUserLoading())
 
   // Fetch user informations from an API
@@ -22,4 +23,5 @@ export function* fetchUser() {
       ExampleActions.fetchUserFailure('There was an error while fetching user informations.')
     )
   }
+  */
 }

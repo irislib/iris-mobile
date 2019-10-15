@@ -3537,17 +3537,6 @@ gun@GoodDollar/gun#rnsupport:
     isomorphic-webcrypto "^2.3.2"
     text-encoding "^0.7.0"
 
-gun@^0.2019.930:
-  version "0.2019.930"
-  resolved "https://registry.yarnpkg.com/gun/-/gun-0.2019.930.tgz#9251c064d4408958626af3707f7ce0623e0c19b0"
-  integrity sha512-JZunmIcZqwq9MgrMHBRVAB7HbgNWUnwnHSJZPq0QCCbJwJ4rRctBcBWZF3BgS3AGpOUM9S+ecSQDacQHYJkujg==
-  dependencies:
-    ws "~>7.1.0"
-  optionalDependencies:
-    "@peculiar/webcrypto" "^1.0.19"
-    emailjs "^2.2.0"
-    text-encoding "^0.7.0"
-
 handlebars@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.1.tgz#6e4e41c18ebe7719ae4d38e5aca3d32fa3dd23d3"
@@ -3846,13 +3835,12 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-iris-lib@^0.0.122:
+iris-lib@irislib/iris-lib#rnsupport:
   version "0.0.122"
-  resolved "https://registry.yarnpkg.com/iris-lib/-/iris-lib-0.0.122.tgz#bcb47bb30d7f96c7364168ae32d78d3b410a5903"
-  integrity sha512-2tr31G3yQE5jG3mxeBoysjPai/mLcvz04Ly8nFDSPIgl5GvijFVqAalSzrPl+feuDO3Fja1iG9jkS0C9CejI7g==
+  resolved "https://codeload.github.com/irislib/iris-lib/tar.gz/835c52f3897b6fb883a9abc5dde2f67bb98cd3e7"
   dependencies:
     create-hash "^1.2.0"
-    gun "^0.2019.930"
+    gun GoodDollar/gun#rnsupport
     identicon.js "^2.3.3"
     text-encoding "^0.7.0"
 
@@ -6327,9 +6315,9 @@ react-native-maps@~0.25.0:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d"
   integrity sha512-PFJuW1pt+HnnnN0m0OGk29RSvICFVkK/DScX6cUk0SuCSN2DAHx0y6y57lZyYXcYqU4J4usNpfxgp/ccjASDiw==
 
-"react-native-parsed-text@git+https://github.com/EvanBacon/react-native-parsed-text.git":
+"react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
-  resolved "git+https://github.com/EvanBacon/react-native-parsed-text.git#24939951b13a8223882c74610d758903eed652ab"
+  resolved "https://github.com/EvanBacon/react-native-parsed-text.git#24939951b13a8223882c74610d758903eed652ab"
   dependencies:
     prop-types "^15.5.10"
 
@@ -7901,7 +7889,7 @@ ws@^5.2.0:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^7.1.2, ws@~>7.1.0:
+ws@^7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.1.2.tgz#c672d1629de8bb27a9699eb599be47aeeedd8f73"
   integrity sha512-gftXq3XI81cJCgkUiAVixA0raD9IVmXqsylCrjRygw4+UOOGzPoxnQ6r/CnVL9i+mDncJo94tSkyrtuuQVBmrg==
