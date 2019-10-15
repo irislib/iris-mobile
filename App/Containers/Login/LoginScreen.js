@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform, Text, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
+import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
@@ -12,28 +12,31 @@ class LoginScreen extends React.Component {
   }
 
   static navigationOptions = {
-    header: null,
+    header: null
   }
 
   render() {
     return (
-      <View style={Style.container}>
+      <KeyboardAvoidingView style={Style.container} behavior="height">
         <View>
           <View style={Style.logoContainer}>
-            <Image style={Style.logo} source={Images.logo} resizeMode={'contain'} />
+            <Image style={Style.logo} source={Images.icon} resizeMode={'contain'} />
           </View>
           <Text style={Style.text}>Welcome to Iris!</Text>
           <TextInput
+            autoCapitalize="words"
             autoCorrect={false}
-            style={Style.text}
+            style={Style.name}
             editable
             maxLength={40}
             autoFocus
             placeholder="What's your name?"
           />
           <Button title="Go!" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+          <Text style={Style.text}>or</Text>
+          <Button title="Sign in" />
         </View>
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }

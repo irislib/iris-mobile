@@ -46,13 +46,8 @@ export default StyleSheet.create({
     marginBottom: 5,
     color: 'red',
   },
-  logoContainer: {
+  headerLogo: {
     width: '100%',
-    height: 300,
-    marginBottom: 25,
-  },
-  logo: {
-    width: '100%',
-    height: '100%',
+    height: '70%',
   },
 })

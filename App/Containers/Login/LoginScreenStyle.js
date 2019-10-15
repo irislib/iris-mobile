@@ -19,11 +19,11 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginBottom: 5,
   },
-  instructions: {
+  name: {
     ...Fonts.style.normal,
     textAlign: 'center',
     marginBottom: 5,
-    fontStyle: 'italic',
+    color: 'green'
   },
   loading: {
     ...Fonts.style.normal,
@@ -43,11 +43,12 @@ export default StyleSheet.create({
   },
   logoContainer: {
     width: '100%',
-    height: 300,
+    height: 150,
     marginBottom: 25,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   logo: {
-    width: '100%',
-    height: '100%',
+    width: '50%',
   },
 })

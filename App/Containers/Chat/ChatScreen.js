@@ -13,13 +13,6 @@ class ChatScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Chat',
-    headerRight: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Back"
-        color="#fff"
-      />
-    ),
   }
 
   componentDidMount() {

@@ -3,5 +3,6 @@
  */
 
 export default {
-  logo: require('App/Assets/Images/icon.png'),
+  icon: require('App/Assets/Images/icon.png'),
+  logo: require('App/Assets/Images/logo.png'),
 }

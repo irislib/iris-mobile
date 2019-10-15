@@ -10,6 +10,8 @@ import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'
 import iris from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
+import NavigationService from 'App/Services/NavigationService'
+
 
 /**
  * This is an example of a container component.
@@ -35,7 +37,17 @@ class ChatListScreen extends React.Component {
   }
 
   static navigationOptions = {
-
+    title: 'Chats',
+    headerLeft: null,
+    headerRight: (
+      <Button
+        onPress={() => NavigationService.navigate('MainScreen')}
+        title="+"
+      />
+    ),
+    headerTitle: (
+      <Image style={Style.headerLogo} source={Images.logo} resizeMode={'contain'} />
+    ),
   }
 
   componentDidMount() {
@@ -51,6 +63,7 @@ class ChatListScreen extends React.Component {
         return { chats: newChats, chatsByKey: newChatsByKey }
       }
       this.setState(updateChats)
+      /*
       chat.identity.gun.get('attrs').open(attrs => {
         const mva = Identity.getMostVerifiedAttributes(attrs)
         console.log('attrs', attrs);
@@ -60,19 +73,9 @@ class ChatListScreen extends React.Component {
           this.setState(updateChats)
         }
       })
+      */
       // chat.instance = new Chat({key, gun})
     })
-  }
-
-  static navigationOptions = {
-    title: 'Chats',
-    headerRight: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Back"
-        color="#fff"
-      />
-    ),
   }
 
   render() {
