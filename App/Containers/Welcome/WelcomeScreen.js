@@ -3,40 +3,45 @@ import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, 
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
-import Style from './LoginScreenStyle'
+import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
 
-class LoginScreen extends React.Component {
+class WelcomeScreen extends React.Component {
   componentDidMount() {
 
   }
 
   static navigationOptions = {
-    headerTitle: (
-      <Image style={Style.headerLogo} source={Images.logo} resizeMode={'contain'} />
-    ),
+    header: null
   }
 
   render() {
     return (
       <KeyboardAvoidingView style={Style.container} behavior="height">
-        <View>
-          <TextInput
-            autoCorrect={false}
-            style={Style.text}
-            editable
-            autoFocus
-            placeholder="Paste your private key"
-          />
-          <Text style={Style.text}>or</Text>
-          <Button title="Scan QR" />
+        <View style={Style.logoContainer}>
+          <Image style={Style.logo} source={Images.icon} resizeMode={'contain'} />
+        </View>
+        <Text style={Style.welcome}>Welcome to Iris!</Text>
+        <TextInput
+          autoCapitalize="words"
+          autoCorrect={false}
+          style={Style.name}
+          editable
+          maxLength={40}
+          autoFocus
+          placeholder="What's your name?"
+          placeholderTextColor="white"
+        />
+        <Button color="white" title="Go!" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+        <View style={Style.bottom}>
+          <Button color="white" title="Already signed up?" onPress={() => this.props.navigation.navigate('LoginScreen')} />
         </View>
       </KeyboardAvoidingView>
     )
   }
 }
 
-LoginScreen.propTypes = {
+WelcomeScreen.propTypes = {
   user: PropTypes.object,
   userIsLoading: PropTypes.bool,
   userErrorMessage: PropTypes.string,
@@ -55,4 +60,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginScreen)
+)(WelcomeScreen)

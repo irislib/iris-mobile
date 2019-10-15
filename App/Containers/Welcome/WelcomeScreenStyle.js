@@ -5,19 +5,35 @@ import ApplicationStyles from 'App/Theme/ApplicationStyles'
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
-    margin: 30,
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: '#74d5f1',
   },
   title: {
     ...Fonts.style.h2,
     textAlign: 'center',
     marginBottom: 10,
   },
-  text: {
-    ...Fonts.style.normal,
+  welcome: {
+    fontSize: 18,
     textAlign: 'center',
-    marginBottom: 5,
+    marginBottom: 10,
+    marginTop: 10,
+    color: 'white',
+  },
+  name: {
+    fontSize: 24,
+    textAlign: 'center',
+    marginBottom: 10,
+    marginTop: 10,
+    color: 'white'
+  },
+  text: {
+    fontSize: 17,
+    textAlign: 'center',
+    marginBottom: 10,
+    marginTop: 10,
+    color: 'white'
   },
   loading: {
     ...Fonts.style.normal,
@@ -35,8 +51,18 @@ export default StyleSheet.create({
     marginBottom: 5,
     color: 'red',
   },
-  headerLogo: {
-    width: '100%',
-    height: '70%',
+  logoContainer: {
+    height: 300,
+    marginBottom: 25,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
+  logo: {
+    width: '50%',
+  },
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 36
+  }
 })
