@@ -12,24 +12,31 @@ class LoginScreen extends React.Component {
   }
 
   static navigationOptions = {
-    headerTitle: (
-      <Image style={Style.headerLogo} source={Images.logo} resizeMode={'contain'} />
-    ),
+    headerStyle: {
+      backgroundColor: '#74d5f1',
+      borderBottomWidth: 0,
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
   }
 
   render() {
     return (
       <KeyboardAvoidingView style={Style.container} behavior="height">
-        <View>
+        <View style={Style.formContainer}>
           <TextInput
             autoCorrect={false}
             style={Style.text}
             editable
             autoFocus
             placeholder="Paste your private key"
+            placeholderTextColor="white"
+            selectionColor="white"
           />
           <Text style={Style.text}>or</Text>
-          <Button title="Scan QR" />
+          <Button title="Scan QR" color="white" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
         </View>
       </KeyboardAvoidingView>
     )

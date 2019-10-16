@@ -21,20 +21,25 @@ class WelcomeScreen extends React.Component {
         <View style={Style.logoContainer}>
           <Image style={Style.logo} source={Images.icon} resizeMode={'contain'} />
         </View>
-        <Text style={Style.welcome}>Welcome to Iris!</Text>
-        <TextInput
-          autoCapitalize="words"
-          autoCorrect={false}
-          style={Style.name}
-          editable
-          maxLength={40}
-          autoFocus
-          placeholder="What's your name?"
-          placeholderTextColor="white"
-        />
-        <Button color="white" title="Go!" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+        <View style={Style.formContainer}>
+          <Text style={Style.welcome}>Welcome to Iris!</Text>
+          <TextInput
+            autoCapitalize="words"
+            autoCorrect={false}
+            style={Style.name}
+            editable
+            maxLength={40}
+            autoFocus
+            placeholder="What's your name?"
+            placeholderTextColor="white"
+            selectionColor="white"
+          />
+          <Button color="white" title="Go!" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+        </View>
         <View style={Style.bottom}>
-          <Button color="white" title="Already signed up?" onPress={() => this.props.navigation.navigate('LoginScreen')} />
+          <View style={Style.loginButton}>
+            <Button color="white" title="Already signed up?" onPress={() => this.props.navigation.navigate('LoginScreen')} />
+          </View>
         </View>
       </KeyboardAvoidingView>
     )

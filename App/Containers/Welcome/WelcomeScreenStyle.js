@@ -6,7 +6,6 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    justifyContent: 'center',
     backgroundColor: '#74d5f1',
   },
   title: {
@@ -52,17 +51,23 @@ export default StyleSheet.create({
     color: 'red',
   },
   logoContainer: {
-    height: 300,
-    marginBottom: 25,
-    justifyContent: 'center',
-    alignItems: 'center'
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   logo: {
-    width: '50%',
+    width: '60%',
+    height: '60%',
+  },
+  formContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
   bottom: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 36
-  }
+  },
+  loginButton: {
+    marginBottom: 30,
+  },
 })
