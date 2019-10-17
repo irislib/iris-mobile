@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import ExampleActions from 'App/Stores/Example/Actions'
+import LoginActions from 'App/Stores/Login/Actions'
 import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
 
@@ -34,7 +34,7 @@ class WelcomeScreen extends React.Component {
             placeholderTextColor="white"
             selectionColor="white"
           />
-          <Button color="white" title="Go!" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+          <Button color="white" title="Go!" onPress={() => this.props.logInAsNewUser('spede')} />
         </View>
         <View style={Style.bottom}>
           <View style={Style.loginButton}>
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  logInAsNewUser: (name) => dispatch(LoginActions.logInAsNewUser(name)),
 })
 
 export default connect(

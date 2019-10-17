@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import ExampleActions from 'App/Stores/Example/Actions'
+import LoginActions from 'App/Stores/Login/Actions'
 import Style from './LoginScreenStyle'
 import { Images } from 'App/Theme'
 
@@ -34,9 +34,10 @@ class LoginScreen extends React.Component {
             placeholder="Paste your private key"
             placeholderTextColor="white"
             selectionColor="white"
+            onChangeText={(key) => this.props.logInWithKey(key)}
           />
           <Text style={Style.text}>or</Text>
-          <Button title="Scan QR" color="white" onPress={() => this.props.navigation.navigate('ChatListScreen')} />
+          <Button title="Scan QR" color="white" />
         </View>
       </KeyboardAvoidingView>
     )
@@ -45,18 +46,14 @@ class LoginScreen extends React.Component {
 
 LoginScreen.propTypes = {
   user: PropTypes.object,
-  userIsLoading: PropTypes.bool,
-  userErrorMessage: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({
-  user: state.example.user,
-  userIsLoading: state.example.userIsLoading,
-  userErrorMessage: state.example.userErrorMessage,
+
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  logInWithKey: (key) => dispatch(LoginActions.logInWithKey(key))
 })
 
 export default connect(

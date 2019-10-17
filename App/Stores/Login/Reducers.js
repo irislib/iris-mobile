@@ -6,17 +6,27 @@
 
 import { INITIAL_STATE } from './InitialState'
 import { createReducer } from 'reduxsauce'
-import { ChatTypes } from './Actions'
+import { LoginTypes } from './Actions'
 
-export const gotChat = (state, { chat }) => {
-  const newState = Object.assign({}, state)
-  newState.chatsByKey[chat.key] = chat
-  return newState
+export const logOut = (state) => {
+  // TODO: log out gun
+  return {
+    ...state,
+    privateKey: null,
+  }
+}
+
+export const logInWithKey = (state, { key }) => {
+  return {
+    ...state,
+    privateKey: JSON.parse(key),
+  }
 }
 
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
  */
 export const reducer = createReducer(INITIAL_STATE, {
-  [ChatTypes.GOT_CHAT]: gotChat,
+  [LoginTypes.LOG_IN_WITH_KEY]: logInWithKey,
+  [LoginTypes.LOG_OUT]: logOut,
 })
