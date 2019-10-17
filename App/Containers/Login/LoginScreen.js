@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types'
 import Style from './LoginScreenStyle'
 import { Images } from 'App/Theme'
 import gun from 'App/Services/GunService'
+import { login as irisLogin } from 'App/Services/IrisService'
 
 class LoginScreen extends React.Component {
   componentDidMount() {
@@ -23,7 +24,9 @@ class LoginScreen extends React.Component {
 
   logInWithKey(key) {
     try {
-      gun.user().auth(JSON.parse(key))
+      key = JSON.parse(key)
+      gun.user().auth(key)
+      irisLogin(gun, key)
       this.props.navigation.navigate('ChatListScreen')
     } catch (e) {
       // TODO: show error

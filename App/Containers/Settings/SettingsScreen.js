@@ -4,6 +4,7 @@ import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import Style from './SettingsScreenStyle'
 import gun from 'App/Services/GunService'
+import { logout as irisLogout } from 'App/Services/IrisService'
 import Navigation from 'App/Services/NavigationService'
 
 class SettingsScreen extends React.Component {
@@ -11,11 +12,17 @@ class SettingsScreen extends React.Component {
     title: 'Settings',
   }
 
+  logout() {
+    gun.user().leave()
+    irisLogout()
+    Navigation.navigateAndReset('WelcomeScreen')
+  }
+
   render() {
     return (
       <View style={Style.container}>
         <View style={Style.item}>
-          <Button title="Log out" onPress={() => Navigation.navigateAndReset('WelcomeScreen')} />
+          <Button title="Log out" onPress={() => this.logout()} />
         </View>
       </View>
     )

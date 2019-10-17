@@ -9,24 +9,6 @@ import iris from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
-
-/**
- * This is an example of a container component.
- *
- * This screen displays a little help message and informations about a fake user.
- * Feel free to remove it.
- */
-
-function Item({ title }) {
-  return (
-    <TouchableWithoutFeedback>
-      <View style={Style.item}>
-        <Text style={Style.title}>{title}</Text>
-      </View>
-    </TouchableWithoutFeedback>
-  )
-}
-
 class ChatListScreen extends React.Component {
   state = {
     chatsByKey: {},

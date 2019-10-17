@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types'
 import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
 import gun from 'App/Services/GunService'
+import { login as irisLogin } from 'App/Services/IrisService'
 import { Key } from 'iris-lib'
 
 class WelcomeScreen extends React.Component {
@@ -22,6 +23,7 @@ class WelcomeScreen extends React.Component {
     }
     key = await Key.generate()
     gun.user().auth(key)
+    irisLogin(gun, key, {name})
     this.props.navigation.navigate('ChatListScreen')
   }
 
