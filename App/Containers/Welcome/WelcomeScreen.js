@@ -1,10 +1,10 @@
 import React from 'react'
 import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
-import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import LoginActions from 'App/Stores/Login/Actions'
 import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
+import gun from 'App/Services/GunService'
+import { Key } from 'iris-lib'
 
 class WelcomeScreen extends React.Component {
   componentDidMount() {
@@ -13,6 +13,13 @@ class WelcomeScreen extends React.Component {
 
   static navigationOptions = {
     header: null
+  }
+
+  logInAsNewUser(name) {
+    Key.generate().then(key => {
+      gun.user().auth(key)
+      this.props.navigation.navigate('ChatListScreen')
+    })
   }
 
   render() {
@@ -34,7 +41,7 @@ class WelcomeScreen extends React.Component {
             placeholderTextColor="white"
             selectionColor="white"
           />
-          <Button color="white" title="Go!" onPress={() => this.props.logInAsNewUser('spede')} />
+          <Button color="white" title="Go!" onPress={() => this.logInAsNewUser('spede')} />
         </View>
         <View style={Style.bottom}>
           <View style={Style.loginButton}>
@@ -52,17 +59,4 @@ WelcomeScreen.propTypes = {
   userErrorMessage: PropTypes.string,
 }
 
-const mapStateToProps = (state) => ({
-  user: state.example.user,
-  userIsLoading: state.example.userIsLoading,
-  userErrorMessage: state.example.userErrorMessage,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  logInAsNewUser: (name) => dispatch(LoginActions.logInAsNewUser(name)),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WelcomeScreen)
+export default WelcomeScreen

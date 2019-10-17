@@ -1,9 +1,7 @@
 import React from 'react'
 import { Button } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
-import { connect } from 'react-redux'
 import { Chat } from 'iris-lib'
-import PrivKey from 'App/privateKey.json';
 import gun from 'App/Services/GunService'
 
 class ChatScreen extends React.Component {
@@ -20,7 +18,7 @@ class ChatScreen extends React.Component {
     const onMessage = (msg, info) => {
       this.setState(previousState => {
         msg.createdAt = new Date(msg.time)
-        msg._id = msg.time
+        msg._id = msg.time + (info.selfAuthored ? 0 : 1)
         msg.user = {
           name: msg.author,
           _id: (info.selfAuthored ? 1 : 2),
@@ -30,7 +28,7 @@ class ChatScreen extends React.Component {
         return { messages: newMessages }
       });
     }
-    const chat = new Chat({gun, key: PrivKey, participants: key, onMessage});
+    this.chat = new Chat({gun, key: gun.user()._.sea, participants: key, onMessage});
     /*
     this.setState({
       messages: [
@@ -50,9 +48,13 @@ class ChatScreen extends React.Component {
   }
 
   onSend(messages = []) {
-    this.setState(previousState => ({
-      messages: GiftedChat.append(previousState.messages, messages),
-    }))
+    messages.forEach(m => {
+      this.chat.send({
+        text: m.text,
+        time: new Date().toISOString(),
+        author: 'me'
+      })
+    })
   }
 
   render() {
@@ -69,17 +71,4 @@ class ChatScreen extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  user: state.example.user,
-  userIsLoading: state.example.userIsLoading,
-  userErrorMessage: state.example.userErrorMessage,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  // fetchUser: () => dispatch(ExampleActions.fetchUser()),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ChatScreen)
+export default ChatScreen

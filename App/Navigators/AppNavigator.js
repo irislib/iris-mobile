@@ -18,14 +18,14 @@ const StackNavigator = createStackNavigator(
     SplashScreen: SplashScreen,
     // The main application screen is our "ChatListScreen". Feel free to replace it with your
     // own screen and remove the example.
-    MainScreen: WelcomeScreen,
+    WelcomeScreen: WelcomeScreen,
     ChatScreen: ChatScreen,
     ChatListScreen: ChatListScreen,
     LoginScreen: LoginScreen,
   },
   {
     // By default the application will show the splash screen
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'WelcomeScreen',
     // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
     headerMode: 'float',
   }

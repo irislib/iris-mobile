@@ -1,9 +1,6 @@
 import React from 'react'
 import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback } from 'react-native'
-import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import ExampleActions from 'App/Stores/Example/Actions'
-import { liveInEurope } from 'App/Stores/Example/Selectors'
 import Style from './ChatListScreenStyle'
 import { Images } from 'App/Theme'
 import { Chat } from 'iris-lib'
@@ -41,7 +38,7 @@ class ChatListScreen extends React.Component {
     headerLeft: null,
     headerRight: (
       <Button
-        onPress={() => NavigationService.navigate('MainScreen')}
+        onPress={() => NavigationService.navigate('WelcomeScreen')}
         title="+"
       />
     ),
@@ -51,14 +48,22 @@ class ChatListScreen extends React.Component {
   }
 
   componentDidMount() {
-
+    gun.user().get('chat').map().on((node, key) => {
+      this.setState(previousState => {
+        const newState = {...previousState}
+        const chat = {key, name: key.substr(0, 12) + '...'}
+        newState.chatsByKey[key] = chat
+        newState.chats = Object.values(newState.chatsByKey)
+        return newState
+      })
+    })
   }
 
   render() {
     return (
       <View style={Style.container}>
         <FlatList
-          data={this.props.chats}
+          data={this.state.chats}
           renderItem={({ item }) => (
             <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', {key:item.key})}>
               <View style={Style.item}>
@@ -77,16 +82,4 @@ ChatListScreen.propTypes = {
   chats: PropTypes.array,
 }
 
-const mapStateToProps = (state) => {
-  const chats = Object.values(state.chat.chatsByKey)
-  return { chats }
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  // fetchUser: () => dispatch(ExampleActions.fetchUser()),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ChatListScreen)
+export default ChatListScreen
