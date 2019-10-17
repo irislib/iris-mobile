@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'

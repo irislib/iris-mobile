@@ -1,7 +1,7 @@
 import React from 'react'
 import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback } from 'react-native'
 import { PropTypes } from 'prop-types'
-import Style from './ChatListScreenStyle'
+import Style from './Style'
 import { Images } from 'App/Theme'
 import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'
@@ -35,11 +35,16 @@ class ChatListScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Chats',
-    headerLeft: null,
+    headerLeft: (
+      <Button
+        onPress={() => NavigationService.navigate('SettingsScreen')}
+        title="👤"
+      />
+    ),
     headerRight: (
       <Button
-        onPress={() => NavigationService.navigate('WelcomeScreen')}
-        title="+"
+        onPress={() => NavigationService.navigate('CreateChatScreen')}
+        title="➕"
       />
     ),
     headerTitle: (

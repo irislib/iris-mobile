@@ -22,9 +22,12 @@ class LoginScreen extends React.Component {
   }
 
   logInWithKey(key) {
-    // TODO handle invalid key
-    gun.user().auth(JSON.parse(key))
-    this.props.navigation.navigate('ChatListScreen')
+    try {
+      gun.user().auth(JSON.parse(key))
+      this.props.navigation.navigate('ChatListScreen')
+    } catch (e) {
+      // TODO: show error
+    }
   }
 
   render() {

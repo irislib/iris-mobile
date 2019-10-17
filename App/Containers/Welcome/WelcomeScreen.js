@@ -15,11 +15,14 @@ class WelcomeScreen extends React.Component {
     header: null
   }
 
-  logInAsNewUser(name) {
-    Key.generate().then(key => {
-      gun.user().auth(key)
-      this.props.navigation.navigate('ChatListScreen')
-    })
+  async logInAsNewUser() {
+    const name = this.state.name
+    if (!(name && name.length > 0)) {
+      return; // TODO: show error
+    }
+    key = await Key.generate()
+    gun.user().auth(key)
+    this.props.navigation.navigate('ChatListScreen')
   }
 
   render() {
@@ -40,8 +43,9 @@ class WelcomeScreen extends React.Component {
             placeholder="What's your name?"
             placeholderTextColor="white"
             selectionColor="white"
+            onChangeText={(name) => this.setState({name})}
           />
-          <Button color="white" title="Go!" onPress={() => this.logInAsNewUser('spede')} />
+          <Button color="white" title="Go!" onPress={() => this.logInAsNewUser()} />
         </View>
         <View style={Style.bottom}>
           <View style={Style.loginButton}>
