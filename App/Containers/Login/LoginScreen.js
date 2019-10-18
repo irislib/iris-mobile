@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
             onChangeText={(key) => this.logInWithKey(key)}
           />
           <Text style={Style.text}>or</Text>
-          <Button title="Scan QR" color="white" />
+          <Button title="Scan QR" color="white" onPress={() => this.props.navigation.navigate('ScanScreen')} />
         </View>
       </KeyboardAvoidingView>
     )
