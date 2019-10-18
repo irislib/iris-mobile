@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback } from 'react-native'
+import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback, TextInput } from 'react-native'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'
@@ -9,13 +9,13 @@ import { iris } from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
-class CreateChatScreen extends React.Component {
+class CreateContactScreen extends React.Component {
   state = {
     contacts: []
   }
 
   static navigationOptions = {
-    title: 'Create chat',
+    title: 'Add contact',
   }
 
   componentDidMount() {
@@ -32,24 +32,15 @@ class CreateChatScreen extends React.Component {
   render() {
     return (
       <View style={Style.container}>
-        <FlatList
-          data={this.state.contacts}
-          renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen')}>
-              <View style={Style.item}>
-                <Text style={Style.text}>contact</Text>
-              </View>
-            </TouchableWithoutFeedback>
-          )}
-          // keyExtractor={item => item.key}
-        />
+        <TextInput style={Style.input} placeholder="Name" />
+        <Button title="Add contact" />
       </View>
     )
   }
 }
 
-CreateChatScreen.propTypes = {
+CreateContactScreen.propTypes = {
   chats: PropTypes.array,
 }
 
-export default CreateChatScreen
+export default CreateContactScreen

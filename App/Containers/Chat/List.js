@@ -20,13 +20,13 @@ class ChatListScreen extends React.Component {
     headerLeft: (
       <Button
         onPress={() => NavigationService.navigate('SettingsScreen')}
-        title="👤"
+        title="⚙️"
       />
     ),
     headerRight: (
       <Button
-        onPress={() => NavigationService.navigate('CreateChatScreen')}
-        title="➕"
+        onPress={() => NavigationService.navigate('ContactListScreen')}
+        title="👤"
       />
     ),
     headerTitle: (

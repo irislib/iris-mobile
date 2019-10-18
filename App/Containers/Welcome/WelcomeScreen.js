@@ -21,6 +21,9 @@ class WelcomeScreen extends React.Component {
     if (!(name && name.length > 0)) {
       return; // TODO: show error
     }
+    if (name.indexOf('{') !== -1 || name.indexOf('}') !== -1) {
+      return; // prevent accidentally pasting private key here
+    }
     key = await Key.generate()
     gun.user().auth(key)
     irisLogin(gun, key, {name})

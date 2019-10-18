@@ -9,13 +9,19 @@ import { iris } from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
-class CreateChatScreen extends React.Component {
+class ContactListScreen extends React.Component {
   state = {
     contacts: []
   }
 
   static navigationOptions = {
-    title: 'Create chat',
+    title: 'Contacts',
+    headerRight: (
+      <Button
+        onPress={() => NavigationService.navigate('CreateContactScreen')}
+        title="➕"
+      />
+    ),
   }
 
   componentDidMount() {
@@ -48,8 +54,8 @@ class CreateChatScreen extends React.Component {
   }
 }
 
-CreateChatScreen.propTypes = {
+ContactListScreen.propTypes = {
   chats: PropTypes.array,
 }
 
-export default CreateChatScreen
+export default ContactListScreen
