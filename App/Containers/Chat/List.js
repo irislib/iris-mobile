@@ -5,7 +5,7 @@ import Style from './Style'
 import { Images } from 'App/Theme'
 import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'
-import iris from 'App/Services/IrisService'
+import { iris } from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
@@ -42,6 +42,15 @@ class ChatListScreen extends React.Component {
         newState.chatsByKey[key] = chat
         newState.chats = Object.values(newState.chatsByKey)
         return newState
+      })
+      iris().get('keyID', key).getName(name => {
+        this.setState(previousState => {
+          const newState = {...previousState}
+          const chat = {key, name}
+          newState.chatsByKey[key] = chat
+          newState.chats = Object.values(newState.chatsByKey)
+          return newState
+        })
       })
     })
   }

@@ -11,6 +11,7 @@ import NavigationService from 'App/Services/NavigationService'
 
 class ContactListScreen extends React.Component {
   state = {
+    contactsByKey: {},
     contacts: []
   }
 
@@ -25,14 +26,19 @@ class ContactListScreen extends React.Component {
   }
 
   componentDidMount() {
+    const limit = 10
+    const cursor = ''
     iris().search('', undefined, (contact) => {
-      console.log('got contact', contact)
-      this.setState(previousState => {
-        const newState = {...previousState}
-        newState.contacts.push(contact)
-        return newState
+      contact.getName(name => {
+        this.setState(previousState => {
+          const newState = {...previousState}
+          contact.name = name
+          newState.contactsByKey[contact.cursor] = contact
+          newState.contacts = Object.values(newState.contactsByKey)
+          return newState
+        })
       })
-    })
+    }, limit, cursor)
   }
 
   render() {
@@ -41,13 +47,13 @@ class ContactListScreen extends React.Component {
         <FlatList
           data={this.state.contacts}
           renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen')}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', {key:item.cursor.split(':')[0]})}>
               <View style={Style.item}>
-                <Text style={Style.text}>contact</Text>
+                <Text style={Style.text}>{item.name}</Text>
               </View>
             </TouchableWithoutFeedback>
           )}
-          // keyExtractor={item => item.key}
+          keyExtractor={item => item.cursor}
         />
       </View>
     )

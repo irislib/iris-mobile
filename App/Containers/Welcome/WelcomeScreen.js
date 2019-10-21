@@ -4,8 +4,8 @@ import { PropTypes } from 'prop-types'
 import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
 import gun from 'App/Services/GunService'
-import { login as irisLogin } from 'App/Services/IrisService'
-import { Key } from 'iris-lib'
+import { iris, login as irisLogin } from 'App/Services/IrisService'
+import { Key, Message } from 'iris-lib'
 
 class WelcomeScreen extends React.Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class WelcomeScreen extends React.Component {
     header: null
   }
 
-  async logInAsNewUser() {
+  logInAsNewUser() {
     const name = this.state.name
     if (!(name && name.length > 0)) {
       return; // TODO: show error
@@ -24,9 +24,14 @@ class WelcomeScreen extends React.Component {
     if (name.indexOf('{') !== -1 || name.indexOf('}') !== -1) {
       return; // prevent accidentally pasting private key here
     }
-    key = await Key.generate()
-    gun.user().auth(key)
-    irisLogin(gun, key, {name})
+    const logInWithKey = key => {
+      gun.user().auth(key)
+      irisLogin(gun, key, {name})
+      const TRUSTED_BY_DEFAULT = {keyID: 'b8ByaYNBDCMLNdZqMdas5oUFLCxBf2VH3-NjUulDaTo.DVzINErRVs6m5tyjAux6fcNfndadcgZVN5hLSwYTCLc'}
+      Message.createRating({recipient: TRUSTED_BY_DEFAULT, rating: 1, text: 'Trusted by default as a web of trust entry point.'}, key)
+        .then(m => iris().addMessage(m))
+    }
+    Key.generate().then(logInWithKey)
     this.props.navigation.navigate('ChatListScreen')
   }
 
