@@ -18,6 +18,7 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 32,
+    textAlign: 'center',
   },
   input: {
     fontSize: Fonts.size.input,

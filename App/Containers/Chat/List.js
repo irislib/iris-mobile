@@ -38,7 +38,7 @@ class ChatListScreen extends React.Component {
     gun.user().get('chat').map().on((node, key) => {
       this.setState(previousState => {
         const newState = {...previousState}
-        const chat = {key, name: key.substr(0, 12) + '...'}
+        const chat = {type: 'keyID', value: key, name: key.substr(0, 12) + '...'}
         newState.chatsByKey[key] = chat
         newState.chats = Object.values(newState.chatsByKey)
         return newState
@@ -46,7 +46,7 @@ class ChatListScreen extends React.Component {
       iris().get('keyID', key).getName(name => {
         this.setState(previousState => {
           const newState = {...previousState}
-          const chat = {key, name}
+          const chat = {type: 'keyID', value: key, name}
           newState.chatsByKey[key] = chat
           newState.chats = Object.values(newState.chatsByKey)
           return newState
@@ -61,7 +61,7 @@ class ChatListScreen extends React.Component {
         <FlatList
           data={this.state.chats}
           renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', {key:item.key})}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', { type: item.type, value: item.value })}>
               <View style={Style.item}>
                 <Text style={Style.text}>{item.name}</Text>
               </View>

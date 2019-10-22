@@ -47,7 +47,7 @@ class ContactListScreen extends React.Component {
         <FlatList
           data={this.state.contacts}
           renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', {key:item.cursor.split(':')[0]})}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ContactScreen', { value: item.cursor.split(':')[0], type: item.cursor.split(':')[1] })}>
               <View style={Style.item}>
                 <Text style={Style.text}>{item.name}</Text>
               </View>

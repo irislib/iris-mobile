@@ -1,71 +1,34 @@
 import React from 'react'
-import { GiftedChat } from 'react-native-gifted-chat'
-import { Chat } from 'iris-lib'
+import { View, Text, Button, Image, TextInput } from 'react-native'
+import Style from './Style'
 import gun from 'App/Services/GunService'
+import { iris } from 'App/Services/IrisService'
 
 class ContactScreen extends React.Component {
   state = {
-    messages: [],
+    name: ''
   }
 
   static navigationOptions = {
-    title: 'Chat',
+    title: '',
   }
 
   componentDidMount() {
-    const key = this.props.navigation.getParam('key', 'nobody')
-    const onMessage = (msg, info) => {
-      this.setState(previousState => {
-        msg.createdAt = new Date(msg.time)
-        msg._id = msg.time + (info.selfAuthored ? 0 : 1)
-        msg.user = {
-          name: msg.author,
-          _id: (info.selfAuthored ? 1 : 2),
-        }
-        newMessages = previousState.messages.concat(msg)
-        newMessages.sort((a, b) => b.createdAt - a.createdAt)
-        return { messages: newMessages }
-      });
-    }
-    this.chat = new Chat({gun, key: gun.user()._.sea, participants: key, onMessage});
-    /*
-    this.setState({
-      messages: [
-        {
-          _id: 1,
-          text: 'Hello developer, I am ' + key,
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://placeimg.com/140/140/any',
-          },
-        },
-      ],
-    })
-    */
-  }
-
-  onSend(messages = []) {
-    messages.forEach(m => {
-      this.chat.send({
-        text: m.text,
-        time: new Date().toISOString(),
-        author: 'me'
-      })
+    const type = this.props.navigation.getParam('type', 'keyID')
+    const value = this.props.navigation.getParam('value', '')
+    this.setState({type, value, name: value.substr(0, 6) + '...'})
+    iris().get(type, value).getName(name => {
+      this.setState({name})
     })
   }
 
   render() {
     return (
-      <GiftedChat
-        messages={this.state.messages}
-        renderUsernameOnMessage={true}
-        onSend={messages => this.onSend(messages)}
-        user={{
-          _id: 1,
-        }}
-      />
+      <View style={Style.container}>
+        <Text style={Style.title}>{this.state.name}</Text>
+        <Button title="💬 Chat" onPress={() => this.props.navigation.navigate('ChatScreen', {type:this.state.type, value:this.state.value})} />
+        <Button title="🔗 Share Contact" onPress={() => {}} />
+      </View>
     )
   }
 }

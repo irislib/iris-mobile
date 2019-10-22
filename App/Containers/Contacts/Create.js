@@ -16,6 +16,9 @@ class CreateContactScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Add contact',
+    headerRight: (
+      <Button title="Done" onPress={() => this.addContact()} /> // TODO fix onPress
+    )
   }
 
   componentDidMount() {
@@ -30,7 +33,7 @@ class CreateContactScreen extends React.Component {
       const privateKey = gun.user().is.alias
       Message.createVerification({recipient: {uuid: uuid.value, name}}, privateKey)
         .then(m => iris().addMessage(m))
-      this.props.navigation.navigate('ContactListScreen')
+      this.props.navigation.navigate('ContactScreen', { type: 'uuid', value: uuid.value })
     }
   }
 

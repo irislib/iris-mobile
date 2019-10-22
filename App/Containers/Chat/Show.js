@@ -1,6 +1,8 @@
 import React from 'react'
+import { Button } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
+import NavigationService from 'App/Services/NavigationService'
 import gun from 'App/Services/GunService'
 import { iris } from 'App/Services/IrisService'
 
@@ -12,12 +14,15 @@ class ChatScreen extends React.Component {
   static navigationOptions = ({navigation}) => {
     const {state} = navigation;
     return {
-      title: state.params.title || '',
+      headerTitle: (
+        <Button title={state.params.title || ''} onPress={() => NavigationService.navigate('ContactScreen', { type: state.params.type, value: state.params.value })} />
+      )
     }
   }
 
   componentDidMount() {
-    const key = this.props.navigation.getParam('key', 'nobody')
+    const type = this.props.navigation.getParam('type', 'keyID')
+    const value = this.props.navigation.getParam('value', '')
     const setName = name => {
       this.name = name
       this.props.navigation.setParams({title: name})
@@ -32,8 +37,8 @@ class ChatScreen extends React.Component {
         return newState
       })
     }
-    setName(key.substr(0, 6) + '...')
-    const them = iris().get('keyID', key).getName(setName)
+    setName(value.substr(0, 6) + '...')
+    const them = iris().get(type, value).getName(setName)
     const onMessage = (msg, info) => {
       this.setState(previousState => {
         msg.createdAt = new Date(msg.time)
@@ -47,7 +52,7 @@ class ChatScreen extends React.Component {
         return { messages: newMessages }
       });
     }
-    this.chat = new Chat({gun, key: gun.user()._.sea, participants: key, onMessage});
+    this.chat = new Chat({gun, key: gun.user()._.sea, participants: value, onMessage});
     /*
     this.setState({
       messages: [
