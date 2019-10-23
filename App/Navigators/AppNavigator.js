@@ -11,6 +11,7 @@ import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
 import LoginScreen from 'App/Containers/Login/LoginScreen'
 import WelcomeScreen from 'App/Containers/Welcome/WelcomeScreen'
 import SettingsScreen from 'App/Containers/Settings/SettingsScreen'
+import ShowPrivateKeyScreen from 'App/Containers/Settings/ShowPrivateKeyScreen'
 import ScanScreen from 'App/Containers/Scan/Scan'
 
 /**
@@ -31,6 +32,7 @@ const StackNavigator = createStackNavigator(
     ShareContactScreen,
     LoginScreen,
     SettingsScreen,
+    ShowPrivateKeyScreen,
     ScanScreen,
   },
   {

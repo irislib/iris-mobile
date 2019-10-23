@@ -3,55 +3,55 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-20@2x.png",
+      "filename" : "iris_icon_blue_rgb_1024-20@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-20@3x.png",
+      "filename" : "iris_icon_blue_rgb_1024-20@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-29@2x.png",
+      "filename" : "iris_icon_blue_rgb_1024-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-29@3x.png",
+      "filename" : "iris_icon_blue_rgb_1024-29@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-40@2x.png",
+      "filename" : "iris_icon_blue_rgb_1024-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-40@3x.png",
+      "filename" : "iris_icon_blue_rgb_1024-40@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-60@2x.png",
+      "filename" : "iris_icon_blue_rgb_1024-60@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iris_icon_blue_rgb-60@3x.png",
+      "filename" : "iris_icon_blue_rgb_1024-60@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "iris_icon_blue_rgb-1024.png",
+      "filename" : "iris_icon_blue_rgb_1024-1024.png",
       "scale" : "1x"
     }
   ],

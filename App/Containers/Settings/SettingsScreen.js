@@ -6,6 +6,7 @@ import Style from './SettingsScreenStyle'
 import gun from 'App/Services/GunService'
 import { logout as irisLogout } from 'App/Services/IrisService'
 import Navigation from 'App/Services/NavigationService'
+import QRCode from 'react-native-qrcode-svg'
 
 class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -23,6 +24,9 @@ class SettingsScreen extends React.Component {
       <View style={Style.container}>
         <View style={Style.item}>
           <Button title="Log out" onPress={() => this.logout()} />
+        </View>
+        <View style={Style.item}>
+          <Button title="Show private key" onPress={() => Navigation.navigate('ShowPrivateKeyScreen') } />
         </View>
       </View>
     )

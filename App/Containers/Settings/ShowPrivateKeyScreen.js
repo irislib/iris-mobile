@@ -1,0 +1,37 @@
+import React from 'react'
+import { Button, View, Clipboard, Text } from 'react-native'
+import QRCode from 'react-native-qrcode-svg'
+import Style from './SettingsScreenStyle'
+import gun from 'App/Services/GunService'
+
+class ShowPrivateKeyScreen extends React.Component {
+  state = {
+    privateKey: null
+  }
+
+  static navigationOptions = {
+    title: 'Private key',
+  }
+
+  componentDidMount() {
+    const privateKey = JSON.stringify(gun.user().is.alias)
+    this.setState({privateKey})
+  }
+
+  render() {
+    return this.state.privateKey ? (
+      <View style={Style.container}>
+        <QRCode
+          value={this.state.privateKey}
+          size={300}
+        />
+        <Button title="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
+        <Text>Private key is used to log in to your account. Keep your private key safe!</Text>
+      </View>
+    ) : (
+      <View></View>
+    )
+  }
+}
+
+export default ShowPrivateKeyScreen
