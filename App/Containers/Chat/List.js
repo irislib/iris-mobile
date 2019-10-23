@@ -67,7 +67,7 @@ class ChatListScreen extends React.Component {
               </View>
             </TouchableWithoutFeedback>
           )}
-          keyExtractor={item => item.key}
+          keyExtractor={item => item.type + item.value}
         />
       </View>
     )

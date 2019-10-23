@@ -7,7 +7,7 @@ export default StyleSheet.create({
     ...ApplicationStyles.screen.container,
     flex: 1,
     padding: 10,
-
+    alignItems: 'center',
   },
   item: {
     marginVertical: 8,

@@ -6,6 +6,7 @@ import CreateChatScreen from 'App/Containers/Chat/Create'
 import ContactListScreen from 'App/Containers/Contacts/List'
 import ContactScreen from 'App/Containers/Contacts/Show'
 import CreateContactScreen from 'App/Containers/Contacts/Create'
+import ShareContactScreen from 'App/Containers/Contacts/Share'
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
 import LoginScreen from 'App/Containers/Login/LoginScreen'
 import WelcomeScreen from 'App/Containers/Welcome/WelcomeScreen'
@@ -27,6 +28,7 @@ const StackNavigator = createStackNavigator(
     ContactListScreen,
     ContactScreen,
     CreateContactScreen,
+    ShareContactScreen,
     LoginScreen,
     SettingsScreen,
     ScanScreen,

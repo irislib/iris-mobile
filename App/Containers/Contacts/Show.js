@@ -27,7 +27,7 @@ class ContactScreen extends React.Component {
       <View style={Style.container}>
         <Text style={Style.title}>{this.state.name}</Text>
         <Button title="💬 Chat" onPress={() => this.props.navigation.navigate('ChatScreen', {type:this.state.type, value:this.state.value})} />
-        <Button title="🔗 Share Contact" onPress={() => {}} />
+        <Button title="🔗 Share Contact" onPress={() => this.props.navigation.navigate('ShareContactScreen', {type:this.state.type, value:this.state.value})} />
       </View>
     )
   }
