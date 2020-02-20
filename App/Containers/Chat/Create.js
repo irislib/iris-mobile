@@ -11,7 +11,7 @@ import NavigationService from 'App/Services/NavigationService'
 
 class CreateChatScreen extends React.Component {
   state = {
-    contacts: []
+    chats: []
   }
 
   static navigationOptions = {
@@ -19,11 +19,11 @@ class CreateChatScreen extends React.Component {
   }
 
   componentDidMount() {
-    iris().search('', undefined, (contact) => {
-      console.log('got contact', contact)
+    Chat.getChats(gun, key, chat => {
+      console.log('got chat', chat)
       this.setState(previousState => {
         const newState = {...previousState}
-        newState.contacts.push(contact)
+        newState.chats.push(chat)
         return newState
       })
     })
@@ -33,7 +33,7 @@ class CreateChatScreen extends React.Component {
     return (
       <View style={Style.container}>
         <FlatList
-          data={this.state.contacts}
+          data={this.state.chats}
           renderItem={({ item }) => (
             <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen')}>
               <View style={Style.item}>

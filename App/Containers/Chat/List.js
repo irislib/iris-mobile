@@ -35,20 +35,22 @@ class ChatListScreen extends React.Component {
   }
 
   componentDidMount() {
-    gun.user().get('chat').map().on((node, key) => {
+    Chat.getChats(pub => {
       this.setState(previousState => {
         const newState = {...previousState}
-        const chat = {type: 'keyID', value: key, name: key.substr(0, 12) + '...'}
-        newState.chatsByKey[key] = chat
-        newState.chats = Object.values(newState.chatsByKey)
+        const chat = new Chat({gun, key, participants: pub, onMessage: (msg, info) => {
+          console.log(msg);
+        }});
+        newState.chats[pub] = chat
+        newState.chatsArr = Object.values(newState.chats)
         return newState
       })
-      iris().get('keyID', key).getName(name => {
+      gun.user(chat.pub).get('profile').get('name').on(name => {
         this.setState(previousState => {
           const newState = {...previousState}
           const chat = {type: 'keyID', value: key, name}
-          newState.chatsByKey[key] = chat
-          newState.chats = Object.values(newState.chatsByKey)
+          newState.chats[key] = chat
+          newState.chatsArr = Object.values(newState.chats)
           return newState
         })
       })
@@ -59,7 +61,7 @@ class ChatListScreen extends React.Component {
     return (
       <View style={Style.container}>
         <FlatList
-          data={this.state.chats}
+          data={this.state.chatsArr}
           renderItem={({ item }) => (
             <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', { type: item.type, value: item.value })}>
               <View style={Style.item}>

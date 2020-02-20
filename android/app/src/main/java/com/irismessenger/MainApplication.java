@@ -1,4 +1,4 @@
-package com.irissocial;
+package com.irismessenger;
 
 import android.app.Application;
 

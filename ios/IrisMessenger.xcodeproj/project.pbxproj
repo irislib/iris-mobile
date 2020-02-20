@@ -6,21 +6,21 @@
 	objectVersion = 46;
 	objects = {
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* IrisSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IrisSocialTests.m */; };
+		00E356F31AD99517003FC87E /* IrisMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IrisMessengerTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		180E8F10109AAC0F6C4AE8A5 /* libPods-IrisSocial-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C2C6D1905A57358D15545F /* libPods-IrisSocial-tvOS.a */; };
-		298566B4182437FDC9416AAA /* libPods-IrisSocial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD0398590D8F93705C82ABE /* libPods-IrisSocial.a */; };
+		180E8F10109AAC0F6C4AE8A5 /* libPods-IrisMessenger-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C2C6D1905A57358D15545F /* libPods-IrisMessenger-tvOS.a */; };
+		298566B4182437FDC9416AAA /* libPods-IrisMessenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD0398590D8F93705C82ABE /* libPods-IrisMessenger.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
-		2DCD954D1E0B4F2C00145EB5 /* IrisSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IrisSocialTests.m */; };
-		4DAB87E83FB0F8E413EA3C28 /* libPods-IrisSocial-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262FB68990FABB4B74A57DD9 /* libPods-IrisSocial-tvOSTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* IrisMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IrisMessengerTests.m */; };
+		4DAB87E83FB0F8E413EA3C28 /* libPods-IrisMessenger-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262FB68990FABB4B74A57DD9 /* libPods-IrisMessenger-tvOSTests.a */; };
 		63C37E8B2AC542F6BC4A8877 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB604BAD56CE40729982F1CB /* libRNGestureHandler-tvOS.a */; };
-		9B5170A1E2968F671F086D1D /* libPods-IrisSocialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5329D520C5178EF1D2E66068 /* libPods-IrisSocialTests.a */; };
+		9B5170A1E2968F671F086D1D /* libPods-IrisMessengerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5329D520C5178EF1D2E66068 /* libPods-IrisMessengerTests.a */; };
 		BEDAA4C29F2A455594DDC00A /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECFD547ABDD40A8941F8AC8 /* libRNGestureHandler.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -32,48 +32,48 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = IrisSocial;
+			remoteInfo = IrisMessenger;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "IrisSocial-tvOS";
+			remoteInfo = "IrisMessenger-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0048B5962F042D541D140586 /* Pods-IrisSocial-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-IrisSocial-tvOSTests/Pods-IrisSocial-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0048B5962F042D541D140586 /* Pods-IrisMessenger-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-IrisMessenger-tvOSTests/Pods-IrisMessenger-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* IrisSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisSocialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* IrisMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* IrisSocialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IrisSocialTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* IrisSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrisSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IrisSocial/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IrisSocial/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* IrisMessengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IrisMessengerTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* IrisMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrisMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IrisMessenger/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IrisMessenger/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = IrisSocial/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IrisSocial/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = IrisSocial/main.m; sourceTree = "<group>"; };
-		262FB68990FABB4B74A57DD9 /* libPods-IrisSocial-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisSocial-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* IrisSocial-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IrisSocial-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* IrisSocial-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IrisSocial-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = IrisMessenger/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IrisMessenger/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = IrisMessenger/main.m; sourceTree = "<group>"; };
+		262FB68990FABB4B74A57DD9 /* libPods-IrisMessenger-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisMessenger-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* IrisMessenger-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IrisMessenger-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* IrisMessenger-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IrisMessenger-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		34E316EC11926A316EADC97C /* Pods-IrisSocial-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial-tvOS.release.xcconfig"; path = "Target Support Files/Pods-IrisSocial-tvOS/Pods-IrisSocial-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		392317E8F372604E55971F70 /* Pods-IrisSocialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocialTests.release.xcconfig"; path = "Target Support Files/Pods-IrisSocialTests/Pods-IrisSocialTests.release.xcconfig"; sourceTree = "<group>"; };
-		46C2C6D1905A57358D15545F /* libPods-IrisSocial-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisSocial-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5329D520C5178EF1D2E66068 /* libPods-IrisSocialTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisSocialTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C3EFA04EABA7989E628AC64 /* Pods-IrisSocial-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IrisSocial-tvOSTests/Pods-IrisSocial-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		75E936EB1A3002F6A9AB4156 /* Pods-IrisSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial.release.xcconfig"; path = "Target Support Files/Pods-IrisSocial/Pods-IrisSocial.release.xcconfig"; sourceTree = "<group>"; };
-		764AD50AC6F939E0A1C08B00 /* Pods-IrisSocialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocialTests.debug.xcconfig"; path = "Target Support Files/Pods-IrisSocialTests/Pods-IrisSocialTests.debug.xcconfig"; sourceTree = "<group>"; };
+		34E316EC11926A316EADC97C /* Pods-IrisMessenger-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger-tvOS.release.xcconfig"; path = "Target Support Files/Pods-IrisMessenger-tvOS/Pods-IrisMessenger-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		392317E8F372604E55971F70 /* Pods-IrisMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessengerTests.release.xcconfig"; path = "Target Support Files/Pods-IrisMessengerTests/Pods-IrisMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		46C2C6D1905A57358D15545F /* libPods-IrisMessenger-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisMessenger-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5329D520C5178EF1D2E66068 /* libPods-IrisMessengerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisMessengerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C3EFA04EABA7989E628AC64 /* Pods-IrisMessenger-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IrisMessenger-tvOSTests/Pods-IrisMessenger-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		75E936EB1A3002F6A9AB4156 /* Pods-IrisMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger.release.xcconfig"; path = "Target Support Files/Pods-IrisMessenger/Pods-IrisMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		764AD50AC6F939E0A1C08B00 /* Pods-IrisMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessengerTests.debug.xcconfig"; path = "Target Support Files/Pods-IrisMessengerTests/Pods-IrisMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7ECFD547ABDD40A8941F8AC8 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
-		B47D75E5D1913E2479AB2B8D /* Pods-IrisSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial.debug.xcconfig"; path = "Target Support Files/Pods-IrisSocial/Pods-IrisSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		B47D75E5D1913E2479AB2B8D /* Pods-IrisMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger.debug.xcconfig"; path = "Target Support Files/Pods-IrisMessenger/Pods-IrisMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		EB604BAD56CE40729982F1CB /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EDD0398590D8F93705C82ABE /* libPods-IrisSocial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisSocial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB800E05AFB04A97491C501A /* Pods-IrisSocial-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisSocial-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-IrisSocial-tvOS/Pods-IrisSocial-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EDD0398590D8F93705C82ABE /* libPods-IrisMessenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IrisMessenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB800E05AFB04A97491C501A /* Pods-IrisMessenger-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IrisMessenger-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-IrisMessenger-tvOS/Pods-IrisMessenger-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B5170A1E2968F671F086D1D /* libPods-IrisSocialTests.a in Frameworks */,
+				9B5170A1E2968F671F086D1D /* libPods-IrisMessengerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			files = (
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				BEDAA4C29F2A455594DDC00A /* libRNGestureHandler.a in Frameworks */,
-				298566B4182437FDC9416AAA /* libPods-IrisSocial.a in Frameworks */,
+				298566B4182437FDC9416AAA /* libPods-IrisMessenger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 				ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */,
 				63C37E8B2AC542F6BC4A8877 /* libRNGestureHandler-tvOS.a in Frameworks */,
-				180E8F10109AAC0F6C4AE8A5 /* libPods-IrisSocial-tvOS.a in Frameworks */,
+				180E8F10109AAC0F6C4AE8A5 /* libPods-IrisMessenger-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,20 +110,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DAB87E83FB0F8E413EA3C28 /* libPods-IrisSocial-tvOSTests.a in Frameworks */,
+				4DAB87E83FB0F8E413EA3C28 /* libPods-IrisMessenger-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* IrisSocialTests */ = {
+		00E356EF1AD99517003FC87E /* IrisMessengerTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* IrisSocialTests.m */,
+				00E356F21AD99517003FC87E /* IrisMessengerTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = IrisSocialTests;
+			path = IrisMessengerTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -143,7 +143,7 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* IrisSocial */ = {
+		13B07FAE1A68108700A75B9A /* IrisMessenger */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -154,7 +154,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = IrisSocial;
+			name = IrisMessenger;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -163,10 +163,10 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				EDD0398590D8F93705C82ABE /* libPods-IrisSocial.a */,
-				46C2C6D1905A57358D15545F /* libPods-IrisSocial-tvOS.a */,
-				262FB68990FABB4B74A57DD9 /* libPods-IrisSocial-tvOSTests.a */,
-				5329D520C5178EF1D2E66068 /* libPods-IrisSocialTests.a */,
+				EDD0398590D8F93705C82ABE /* libPods-IrisMessenger.a */,
+				46C2C6D1905A57358D15545F /* libPods-IrisMessenger-tvOS.a */,
+				262FB68990FABB4B74A57DD9 /* libPods-IrisMessenger-tvOSTests.a */,
+				5329D520C5178EF1D2E66068 /* libPods-IrisMessengerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,14 +174,14 @@
 		6B80F6007C5408FEF5BD69DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B47D75E5D1913E2479AB2B8D /* Pods-IrisSocial.debug.xcconfig */,
-				75E936EB1A3002F6A9AB4156 /* Pods-IrisSocial.release.xcconfig */,
-				FB800E05AFB04A97491C501A /* Pods-IrisSocial-tvOS.debug.xcconfig */,
-				34E316EC11926A316EADC97C /* Pods-IrisSocial-tvOS.release.xcconfig */,
-				5C3EFA04EABA7989E628AC64 /* Pods-IrisSocial-tvOSTests.debug.xcconfig */,
-				0048B5962F042D541D140586 /* Pods-IrisSocial-tvOSTests.release.xcconfig */,
-				764AD50AC6F939E0A1C08B00 /* Pods-IrisSocialTests.debug.xcconfig */,
-				392317E8F372604E55971F70 /* Pods-IrisSocialTests.release.xcconfig */,
+				B47D75E5D1913E2479AB2B8D /* Pods-IrisMessenger.debug.xcconfig */,
+				75E936EB1A3002F6A9AB4156 /* Pods-IrisMessenger.release.xcconfig */,
+				FB800E05AFB04A97491C501A /* Pods-IrisMessenger-tvOS.debug.xcconfig */,
+				34E316EC11926A316EADC97C /* Pods-IrisMessenger-tvOS.release.xcconfig */,
+				5C3EFA04EABA7989E628AC64 /* Pods-IrisMessenger-tvOSTests.debug.xcconfig */,
+				0048B5962F042D541D140586 /* Pods-IrisMessenger-tvOSTests.release.xcconfig */,
+				764AD50AC6F939E0A1C08B00 /* Pods-IrisMessengerTests.debug.xcconfig */,
+				392317E8F372604E55971F70 /* Pods-IrisMessengerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* IrisSocial */,
+				13B07FAE1A68108700A75B9A /* IrisMessenger */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* IrisSocialTests */,
+				00E356EF1AD99517003FC87E /* IrisMessengerTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0476B6D92256026C006BDB17 /* Recovered References */,
@@ -212,10 +212,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* IrisSocial.app */,
-				00E356EE1AD99517003FC87E /* IrisSocialTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* IrisSocial-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* IrisSocial-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* IrisMessenger.app */,
+				00E356EE1AD99517003FC87E /* IrisMessengerTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* IrisMessenger-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* IrisMessenger-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* IrisSocialTests */ = {
+		00E356ED1AD99517003FC87E /* IrisMessengerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IrisSocialTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IrisMessengerTests" */;
 			buildPhases = (
 				9484506995FC29A4EE3D00D6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -237,14 +237,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = IrisSocialTests;
-			productName = IrisSocialTests;
-			productReference = 00E356EE1AD99517003FC87E /* IrisSocialTests.xctest */;
+			name = IrisMessengerTests;
+			productName = IrisMessengerTests;
+			productReference = 00E356EE1AD99517003FC87E /* IrisMessengerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* IrisSocial */ = {
+		13B07F861A680F5B00A75B9A /* IrisMessenger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IrisSocial" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IrisMessenger" */;
 			buildPhases = (
 				1876371A241F99EEA27D744C /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -256,14 +256,14 @@
 			);
 			dependencies = (
 			);
-			name = IrisSocial;
+			name = IrisMessenger;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* IrisSocial.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* IrisMessenger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* IrisSocial-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* IrisMessenger-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisSocial-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisMessenger-tvOS" */;
 			buildPhases = (
 				E7187EBD4D89301711758D0B /* [CP] Check Pods Manifest.lock */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
@@ -275,14 +275,14 @@
 			);
 			dependencies = (
 			);
-			name = "IrisSocial-tvOS";
-			productName = "IrisSocial-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* IrisSocial-tvOS.app */;
+			name = "IrisMessenger-tvOS";
+			productName = "IrisMessenger-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* IrisMessenger-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* IrisSocial-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* IrisMessenger-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisSocial-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisMessenger-tvOSTests" */;
 			buildPhases = (
 				1486E41A1E3086C92FA56BC5 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -294,9 +294,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "IrisSocial-tvOSTests";
-			productName = "IrisSocial-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* IrisSocial-tvOSTests.xctest */;
+			name = "IrisMessenger-tvOSTests";
+			productName = "IrisMessenger-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* IrisMessenger-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -326,7 +326,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IrisSocial" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IrisMessenger" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -342,10 +342,10 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* IrisSocial */,
-				00E356ED1AD99517003FC87E /* IrisSocialTests */,
-				2D02E47A1E0B4A5D006451C7 /* IrisSocial-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* IrisSocial-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* IrisMessenger */,
+				00E356ED1AD99517003FC87E /* IrisMessengerTests */,
+				2D02E47A1E0B4A5D006451C7 /* IrisMessenger-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* IrisMessenger-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,7 +417,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IrisSocial-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IrisMessenger-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,7 +439,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IrisSocial-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IrisMessenger-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -475,7 +475,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IrisSocialTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IrisMessengerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -497,7 +497,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IrisSocial-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IrisMessenger-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,7 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* IrisSocialTests.m in Sources */,
+				00E356F31AD99517003FC87E /* IrisMessengerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* IrisSocialTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* IrisMessengerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,12 +546,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* IrisSocial */;
+			target = 13B07F861A680F5B00A75B9A /* IrisMessenger */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* IrisSocial-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* IrisMessenger-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -563,7 +563,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = IrisSocial;
+			path = IrisMessenger;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -571,7 +571,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 764AD50AC6F939E0A1C08B00 /* Pods-IrisSocialTests.debug.xcconfig */;
+			baseConfigurationReference = 764AD50AC6F939E0A1C08B00 /* Pods-IrisMessengerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -582,7 +582,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = IrisSocialTests/Info.plist;
+				INFOPLIST_FILE = IrisMessengerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -594,13 +594,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisSocial.app/IrisSocial";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisMessenger.app/IrisMessenger";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 392317E8F372604E55971F70 /* Pods-IrisSocialTests.release.xcconfig */;
+			baseConfigurationReference = 392317E8F372604E55971F70 /* Pods-IrisMessengerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -608,7 +608,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = IrisSocialTests/Info.plist;
+				INFOPLIST_FILE = IrisMessengerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -620,13 +620,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisSocial.app/IrisSocial";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisMessenger.app/IrisMessenger";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B47D75E5D1913E2479AB2B8D /* Pods-IrisSocial.debug.xcconfig */;
+			baseConfigurationReference = B47D75E5D1913E2479AB2B8D /* Pods-IrisMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -637,7 +637,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handlerios/**",
 					"$(SRCROOT)/../node_modules/react-native-notifications/RNNotifications",
 				);
-				INFOPLIST_FILE = IrisSocial/Info.plist;
+				INFOPLIST_FILE = IrisMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -645,14 +645,14 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = IrisSocial;
+				PRODUCT_NAME = IrisMessenger;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75E936EB1A3002F6A9AB4156 /* Pods-IrisSocial.release.xcconfig */;
+			baseConfigurationReference = 75E936EB1A3002F6A9AB4156 /* Pods-IrisMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -662,7 +662,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handlerios/**",
 					"$(SRCROOT)/../node_modules/react-native-notifications/RNNotifications",
 				);
-				INFOPLIST_FILE = IrisSocial/Info.plist;
+				INFOPLIST_FILE = IrisMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -670,14 +670,14 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = IrisSocial;
+				PRODUCT_NAME = IrisMessenger;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB800E05AFB04A97491C501A /* Pods-IrisSocial-tvOS.debug.xcconfig */;
+			baseConfigurationReference = FB800E05AFB04A97491C501A /* Pods-IrisMessenger-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -692,7 +692,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = "IrisSocial-tvOS/Info.plist";
+				INFOPLIST_FILE = "IrisMessenger-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,7 +701,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisSocial-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisMessenger-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -711,7 +711,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34E316EC11926A316EADC97C /* Pods-IrisSocial-tvOS.release.xcconfig */;
+			baseConfigurationReference = 34E316EC11926A316EADC97C /* Pods-IrisMessenger-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -726,7 +726,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = "IrisSocial-tvOS/Info.plist";
+				INFOPLIST_FILE = "IrisMessenger-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,7 +735,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisSocial-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisMessenger-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -745,7 +745,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C3EFA04EABA7989E628AC64 /* Pods-IrisSocial-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 5C3EFA04EABA7989E628AC64 /* Pods-IrisMessenger-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -759,7 +759,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = "IrisSocial-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "IrisMessenger-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,17 +768,17 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisSocial-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisMessenger-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisSocial-tvOS.app/IrisSocial-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisMessenger-tvOS.app/IrisMessenger-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0048B5962F042D541D140586 /* Pods-IrisSocial-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 0048B5962F042D541D140586 /* Pods-IrisMessenger-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -792,7 +792,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 				);
-				INFOPLIST_FILE = "IrisSocial-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "IrisMessenger-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,10 +801,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisSocial-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IrisMessenger-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisSocial-tvOS.app/IrisSocial-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrisMessenger-tvOS.app/IrisMessenger-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -911,7 +911,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IrisSocialTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IrisMessengerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -920,7 +920,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IrisSocial" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IrisMessenger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -929,7 +929,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisSocial-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisMessenger-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -938,7 +938,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisSocial-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IrisMessenger-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -947,7 +947,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IrisSocial" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IrisMessenger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

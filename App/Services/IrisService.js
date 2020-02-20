@@ -1,12 +1,15 @@
 import keypair from '../privateKey.json';
 import gun from './GunService';
-import { Index } from 'iris-lib';
+import { Chat } from 'iris-lib';
 
-let irisInstance;
+const opt = {};
 
-export const login = (gun, keypair, self) => {
-  irisInstance = new Index({gun, keypair, self})
-  return irisInstance.ready
+export const login = (gun, keypair, profile) => {
+  opt.gun = gun
+  opt.keypair = keypair
+  opt.user = gun.user()
+  opt.user.auth(keypair)
+  if (profile) {
+    opt.user.get('profile').put(profile)
+  }
 }
-export const logout = () => irisInstance = null
-export const iris = () => { return irisInstance }

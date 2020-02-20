@@ -1,4 +1,4 @@
-rootProject.name = 'IrisSocial'
+rootProject.name = 'IrisMessenger'
 include ':react-native-notifications'
 project(':react-native-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-notifications/android/app')
 
