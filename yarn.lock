@@ -3335,9 +3335,21 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
-gun@GoodDollar/gun#rnsupport:
-  version "0.2019.915"
-  resolved "https://codeload.github.com/GoodDollar/gun/tar.gz/a2086cd09c2048b092c02489614276ea2e38bf9f"
+gun@0.2019.930:
+  version "0.2019.930"
+  resolved "https://registry.yarnpkg.com/gun/-/gun-0.2019.930.tgz#9251c064d4408958626af3707f7ce0623e0c19b0"
+  integrity sha512-JZunmIcZqwq9MgrMHBRVAB7HbgNWUnwnHSJZPq0QCCbJwJ4rRctBcBWZF3BgS3AGpOUM9S+ecSQDacQHYJkujg==
+  dependencies:
+    ws "~>7.1.0"
+  optionalDependencies:
+    "@peculiar/webcrypto" "^1.0.19"
+    emailjs "^2.2.0"
+    text-encoding "^0.7.0"
+
+gun@^0.2020.116:
+  version "0.2020.116"
+  resolved "https://registry.yarnpkg.com/gun/-/gun-0.2020.116.tgz#83329506064552fd699f3ab7028bc9a094f06cb7"
+  integrity sha512-/nOfMWptbg7T3njN88fXS+Z3PxCEAK2azXoWYONhjFJqJ1mk4yoBlzrXlpMSG0ERTwi8Mc3BERmnnVyn/FGd0g==
   dependencies:
     buffer "^5.4.3"
     ws "^7.1.2"
@@ -3675,12 +3687,13 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-iris-lib@irislib/iris-lib#rnsupport:
-  version "0.0.122"
-  resolved "https://codeload.github.com/irislib/iris-lib/tar.gz/e6539201c1feca2251a3d93ee0b8effc01f486cc"
+iris-lib@^0.0.139:
+  version "0.0.139"
+  resolved "https://registry.yarnpkg.com/iris-lib/-/iris-lib-0.0.139.tgz#a8a9292308448d9b51433317ea63c9df6dd09151"
+  integrity sha512-KOm2Nt/F9M+vtAIQ2AVGKIA6DfgoChq51YawQp2c4m7kvBWqlnNGIcD8knY+2p+HFUGz8/n4Gbw2N5eOp2klng==
   dependencies:
     create-hash "^1.2.0"
-    gun GoodDollar/gun#rnsupport
+    gun "0.2019.930"
     identicon.js "^2.3.3"
     text-encoding "^0.7.0"
 
@@ -7682,6 +7695,13 @@ ws@^7.1.2:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.0.tgz#422eda8c02a4b5dba7744ba66eebbd84bcef0ec7"
   integrity sha512-+SqNqFbwTm/0DC18KYzIsMTnEWpLwJsiasW/O17la4iDRRIO9uaHbvKiAS3AHgTiuuWerK/brj4O6MYZkei9xg==
+  dependencies:
+    async-limiter "^1.0.0"
+
+ws@~>7.1.0:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.1.2.tgz#c672d1629de8bb27a9699eb599be47aeeedd8f73"
+  integrity sha512-gftXq3XI81cJCgkUiAVixA0raD9IVmXqsylCrjRygw4+UOOGzPoxnQ6r/CnVL9i+mDncJo94tSkyrtuuQVBmrg==
   dependencies:
     async-limiter "^1.0.0"
 

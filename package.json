@@ -15,8 +15,8 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
     "axios": "^0.19.0",
-    "gun": "GoodDollar/gun#rnsupport",
-    "iris-lib": "irislib/iris-lib#rnsupport",
+    "gun": "^0.2020.116",
+    "iris-lib": "^0.0.139",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",

@@ -3,7 +3,8 @@ import { Platform, Text, KeyboardAvoidingView, View, Button, ActivityIndicator, 
 import { PropTypes } from 'prop-types'
 import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
-import gun from 'App/Services/GunService'
+import gunInstance from 'App/Services/GunService'
+import gun from 'gun';
 import { iris, login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message } from 'iris-lib'
 import NotificationsIOS, { NotificationAction, NotificationCategory } from 'react-native-notifications'
@@ -60,8 +61,8 @@ class WelcomeScreen extends React.Component {
       return; // prevent accidentally pasting private key here
     }
     const logInWithKey = key => {
-      gun.user().auth(key)
-      irisLogin(gun, key, {name})
+      gunInstance.user().auth(key)
+      irisLogin(gunInstance, key, {name})
       const TRUSTED_BY_DEFAULT = {keyID: 'b8ByaYNBDCMLNdZqMdas5oUFLCxBf2VH3-NjUulDaTo.DVzINErRVs6m5tyjAux6fcNfndadcgZVN5hLSwYTCLc'}
       Message.createRating({recipient: TRUSTED_BY_DEFAULT, rating: 1, text: 'Trusted by default as a web of trust entry point.'}, key)
         .then(m => iris().addMessage(m))

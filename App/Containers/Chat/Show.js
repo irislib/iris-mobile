@@ -4,7 +4,7 @@ import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 import gun from 'App/Services/GunService'
-import { iris } from 'App/Services/IrisService'
+import { session } from 'App/Services/IrisService'
 
 class ChatScreen extends React.Component {
   state = {
@@ -15,14 +15,13 @@ class ChatScreen extends React.Component {
     const {state} = navigation;
     return {
       headerTitle: (
-        <Button title={state.params.title || ''} onPress={() => NavigationService.navigate('ContactScreen', { type: state.params.type, value: state.params.value })} />
+        <Button title={state.params.title || ''} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub })} />
       )
     }
   }
 
   componentDidMount() {
-    const type = this.props.navigation.getParam('type', 'keyID')
-    const value = this.props.navigation.getParam('value', '')
+    const pub = this.props.navigation.getParam('pub')
     const setName = name => {
       this.name = name
       this.props.navigation.setParams({title: name})
@@ -37,8 +36,8 @@ class ChatScreen extends React.Component {
         return newState
       })
     }
-    setName(value.substr(0, 6) + '...')
-    const them = iris().get(type, value).getName(setName)
+    setName(pub.substr(0, 6) + '...')
+    gun.user(pub).get('profile').get('name').on(setName)
     const onMessage = (msg, info) => {
       this.setState(previousState => {
         msg.createdAt = new Date(msg.time)
@@ -52,7 +51,7 @@ class ChatScreen extends React.Component {
         return { messages: newMessages }
       });
     }
-    this.chat = new Chat({gun, key: gun.user()._.sea, participants: value, onMessage});
+    this.chat = new Chat({gun, key: session.keypair, participants: pub, onMessage});
     /*
     this.setState({
       messages: [
