@@ -1,5 +1,6 @@
 import React from 'react'
-import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback } from 'react-native'
+import QRCode from 'react-native-qrcode-svg'
+import { Platform, Text, KeyboardAvoidingView, View, Button, TextInput } from 'react-native'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'
@@ -10,46 +11,49 @@ import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
 class CreateChatScreen extends React.Component {
-  state = {
-    chats: []
-  }
-
   static navigationOptions = {
     title: 'Create chat',
   }
 
-  componentDidMount() {
-    Chat.getChats(gun, key, chat => {
-      console.log('got chat', chat)
-      this.setState(previousState => {
-        const newState = {...previousState}
-        newState.chats.push(chat)
-        return newState
-      })
-    })
+  openChat(link) {
+    console.log('openChat', link)
+  }
+
+  renderMyChatLink() {
+    this.link = 'https://iris.to/?chatWith=IYEdAtGVO5-le8Rmw9L8JAA0Saq19KqYwtCJ3ALU4AU.rtH2wVhsYIXVm1nsZBft7QPvAZMByXAQ5QDSaxOzbQA'
+    return this.link ? (
+      <View>
+        <QRCode
+          value={this.link}
+          size={300}
+        />
+        <Button title="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
+        <Text>But beware of sharing it publicly: you might get spammed with message requests.</Text>
+      </View>
+    ) : (
+      <View></View>
+    )
   }
 
   render() {
     return (
-      <View style={Style.container}>
-        <FlatList
-          data={this.state.chats}
-          renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen')}>
-              <View style={Style.item}>
-                <Text style={Style.text}>contact</Text>
-              </View>
-            </TouchableWithoutFeedback>
-          )}
-          // keyExtractor={item => item.key}
-        />
-      </View>
+      <KeyboardAvoidingView style={Style.container} behavior="height">
+        <View style={Style.formContainer}>
+          <TextInput
+            autoCorrect={false}
+            style={Style.text}
+            editable
+            autoFocus
+            placeholder="Paste someone's chat link"
+            onChangeText={(link) => this.openChat(link)}
+          />
+          <Button title="Scan QR" onPress={() => this.props.navigation.navigate('ScanChatLinkScreen')} />
+          <Text style={Style.text}>Or give your chat link to someone:</Text>
+          {this.renderMyChatLink()}
+        </View>
+      </KeyboardAvoidingView>
     )
   }
-}
-
-CreateChatScreen.propTypes = {
-  chats: PropTypes.array,
 }
 
 export default CreateChatScreen

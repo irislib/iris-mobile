@@ -50,4 +50,9 @@ export default StyleSheet.create({
     width: '100%',
     height: '70%',
   },
+  formContainer: {
+    marginBottom: 50,
+    flex: 1,
+    justifyContent: 'center',
+  },
 })

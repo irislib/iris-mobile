@@ -55,9 +55,9 @@ class ChatListScreen extends React.Component {
   render() {
     return (
       <View style={Style.container}>
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('NewChatScreen')}>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('CreateChatScreen')}>
           <View style={Style.item}>
-            <Text style={Style.text}>Start new chat</Text>
+            <Text style={Style.text}>New chat</Text>
           </View>
         </TouchableWithoutFeedback>
         <FlatList

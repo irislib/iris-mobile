@@ -26,7 +26,7 @@ class ShowPrivateKeyScreen extends React.Component {
           size={300}
         />
         <Button title="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
-        <Text>Private key is used to log in to your account. Keep your private key safe!</Text>
+        <Text>DANGER! Private key is used to log in to your account. Don't give or show your private key to anyone!</Text>
       </View>
     ) : (
       <View></View>

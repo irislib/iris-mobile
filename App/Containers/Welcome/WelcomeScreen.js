@@ -5,7 +5,7 @@ import Style from './WelcomeScreenStyle'
 import { Images } from 'App/Theme'
 import gunInstance from 'App/Services/GunService'
 import gun from 'gun';
-import { iris, login as irisLogin } from 'App/Services/IrisService'
+import { login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message } from 'iris-lib'
 import NotificationsIOS, { NotificationAction, NotificationCategory } from 'react-native-notifications'
 
@@ -63,9 +63,6 @@ class WelcomeScreen extends React.Component {
     const logInWithKey = key => {
       gunInstance.user().auth(key)
       irisLogin(gunInstance, key, {name})
-      const TRUSTED_BY_DEFAULT = {keyID: 'b8ByaYNBDCMLNdZqMdas5oUFLCxBf2VH3-NjUulDaTo.DVzINErRVs6m5tyjAux6fcNfndadcgZVN5hLSwYTCLc'}
-      Message.createRating({recipient: TRUSTED_BY_DEFAULT, rating: 1, text: 'Trusted by default as a web of trust entry point.'}, key)
-        .then(m => iris().addMessage(m))
     }
     Key.generate().then(logInWithKey)
     this.props.navigation.navigate('ChatListScreen')

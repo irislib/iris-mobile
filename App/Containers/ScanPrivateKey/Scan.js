@@ -1,20 +1,22 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import styles from './Style'
+import gunInstance from 'App/Services/GunService'
+import { login } from 'App/Services/IrisService'
 import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Linking,
 } from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-class ScanScreen extends React.Component {
+class ScanPrivateKeyScreen extends React.Component {
   onSuccess = (e) => {
-    Linking
-      .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
+    const key = JSON.parse(e.data)
+    gunInstance.user().auth(key)
+    login(gunInstance, key, {name})
+    this.props.navigation.navigate('ChatListScreen')
   }
 
   render() {
@@ -24,17 +26,12 @@ class ScanScreen extends React.Component {
         // flashMode={QRCodeScanner.Constants.FlashMode.torch}
         topContent={
           <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
+            <Text style={styles.textBold}>Scan your private key QR code</Text> from another device.
           </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
         }
       />
     );
   }
 }
 
-export default ScanScreen
+export default ScanPrivateKeyScreen

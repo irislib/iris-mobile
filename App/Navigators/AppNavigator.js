@@ -12,7 +12,8 @@ import LoginScreen from 'App/Containers/Login/LoginScreen'
 import WelcomeScreen from 'App/Containers/Welcome/WelcomeScreen'
 import SettingsScreen from 'App/Containers/Settings/SettingsScreen'
 import ShowPrivateKeyScreen from 'App/Containers/Settings/ShowPrivateKeyScreen'
-import ScanScreen from 'App/Containers/Scan/Scan'
+import ScanChatLinkScreen from 'App/Containers/ScanChatLink/Scan'
+import ScanPrivateKeyScreen from 'App/Containers/ScanPrivateKey/Scan'
 
 /**
  * The root screen contains the application's navigation.
@@ -33,7 +34,8 @@ const StackNavigator = createStackNavigator(
     LoginScreen,
     SettingsScreen,
     ShowPrivateKeyScreen,
-    ScanScreen,
+    ScanChatLinkScreen,
+    ScanPrivateKeyScreen,
   },
   {
     // By default the application will show the splash screen
