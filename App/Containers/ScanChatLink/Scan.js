@@ -1,8 +1,9 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
+import { Chat } from 'iris-lib'
 import styles from './Style'
 import gunInstance from 'App/Services/GunService'
-import { login } from 'App/Services/IrisService'
+import { login, session } from 'App/Services/IrisService'
 import {
   StyleSheet,
   Text,
@@ -13,10 +14,10 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 class ScanChatLinkScreen extends React.Component {
   onSuccess = (e) => {
-    const key = JSON.parse(e.data)
-    gunInstance.user().auth(key)
-    login(gunInstance, key, {name})
-    this.props.navigation.navigate('ChatListScreen')
+    if (e.data.indexOf('http') === 0 && e.data.indexOf('s=') > 0 && e.data.indexOf('k=') > 0) {
+      const chat = new Chat({key: session.keypair, gun: gunInstance, chatLink: e.data})
+      this.props.navigation.navigate('ChatListScreen')
+    }
   }
 
   render() {

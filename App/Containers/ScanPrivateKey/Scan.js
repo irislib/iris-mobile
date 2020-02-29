@@ -15,7 +15,7 @@ class ScanPrivateKeyScreen extends React.Component {
   onSuccess = (e) => {
     const key = JSON.parse(e.data)
     gunInstance.user().auth(key)
-    login(gunInstance, key, {name})
+    login(gunInstance, key)
     this.props.navigation.navigate('ChatListScreen')
   }
 
