@@ -6118,13 +6118,10 @@ react-native-maps@~0.25.0:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d"
   integrity sha512-PFJuW1pt+HnnnN0m0OGk29RSvICFVkK/DScX6cUk0SuCSN2DAHx0y6y57lZyYXcYqU4J4usNpfxgp/ccjASDiw==
 
-react-native-notifications@^2.0.6:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/react-native-notifications/-/react-native-notifications-2.1.3.tgz#bd08b143bd5c0c8ada77f30ae75a7860df57608f"
-  integrity sha512-7zncKrtYwMkx95Os1tBErUuhMKfUN5J1mFWKe+GKMQDD6DDRaz4zgS1AvojvpVeg2kldcNqqDsYYj0Xn2PSvtQ==
-  dependencies:
-    core-js "^1.0.0"
-    uuid "^2.0.3"
+react-native-notifications@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-notifications/-/react-native-notifications-3.1.2.tgz#fb679e40e81b121041604a6f7403878ed48e099f"
+  integrity sha512-2v2hhXysHWmf87kinVJwaF6bfBVIWCHWho4FudxuK2s4JzS/3zjOUHFnErrYv9YcudGi+U2IwZAHKqMF0wYn1A==
 
 "react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
@@ -7479,11 +7476,6 @@ uuid@3.3.3, uuid@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
-
-uuid@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
-  integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"

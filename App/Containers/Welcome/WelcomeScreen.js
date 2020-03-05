@@ -7,36 +7,11 @@ import gunInstance from 'App/Services/GunService'
 import gun from 'gun';
 import { login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message } from 'iris-lib'
-import NotificationsIOS, { NotificationAction, NotificationCategory } from 'react-native-notifications'
-
-let upvoteAction = new NotificationAction({
-  activationMode: 'background',
-  title: String.fromCodePoint(0x1F44D),
-  identifier: 'UPVOTE_ACTION'
-})
-
-let replyAction = new NotificationAction({
-  activationMode: 'background',
-  title: 'Reply',
-  authenticationRequired: true,
-  textInput: {
-    buttonTitle: 'Reply now',
-    placeholder: 'Insert message'
-  },
-  identifier: 'REPLY_ACTION'
-})
+import {Notifications} from 'react-native-notifications'
 
 class WelcomeScreen extends React.Component {
   componentDidMount() {
 
-  }
-
-  requestNotificationPermissions() {
-    let cat = new NotificationCategory({
-      identifier: 'SOME_CATEGORY',
-      actions: [upvoteAction, replyAction]
-    });
-    NotificationsIOS.requestPermissions([cat]);
   }
 
   static navigationOptions = {
@@ -44,15 +19,6 @@ class WelcomeScreen extends React.Component {
   }
 
   logInAsNewUser() {
-    let localNotification = NotificationsIOS.localNotification({
-    	body: "Local notificiation!",
-    	title: "Local Notification Title",
-    	sound: "chime.aiff",
-        silent: false,
-    	category: "SOME_CATEGORY",
-    	userInfo: { },
-      date: new Date(Date.now() + (20 * 1000))
-    })
     const name = this.state.name
     if (!(name && name.length > 0)) {
       return; // TODO: show error
@@ -66,7 +32,23 @@ class WelcomeScreen extends React.Component {
     }
     Key.generate().then(logInWithKey)
     this.props.navigation.navigate('ChatListScreen')
-    this.requestNotificationPermissions()
+    Notifications.requestPermissions()
+    Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
+      console.log(`Notification received in foreground: ${notification.title} : ${notification.body}`);
+      completion({alert: false, sound: false, badge: false});
+    })
+    Notifications.events().registerNotificationOpened((notification: Notification, completion) => {
+      console.log(`Notification opened: ${notification.payload}`);
+      completion();
+    })
+    Notifications.postLocalNotification({
+    	body: "Local notificiation!",
+    	title: "Local Notification Title",
+    	sound: "chime.aiff",
+    	category: "SOME_CATEGORY",
+    	userInfo: { },
+      date: new Date(Date.now() + (20 * 1000))
+    })
   }
 
   render() {

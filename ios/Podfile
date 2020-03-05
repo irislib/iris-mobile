@@ -1,7 +1,7 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-target 'IrisMessenger' do
-  # Pods for IrisMessenger
+target 'Iris' do
+  # Pods for Iris
   permissions_path = '../node_modules/react-native-permissions/ios'
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
@@ -34,15 +34,15 @@ target 'IrisMessenger' do
 
 
 
-  target 'IrisMessengerTests' do
+  target 'IrisTests' do
     inherit! :search_paths
     # Pods for testing
   end
   use_native_modules!
 end
-target 'IrisMessenger-tvOS' do
-  # Pods for IrisMessenger-tvOS
-  target 'IrisMessenger-tvOSTests' do
+target 'Iris-tvOS' do
+  # Pods for Iris-tvOS
+  target 'Iris-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

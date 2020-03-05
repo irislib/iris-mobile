@@ -37,7 +37,7 @@ class CreateChatScreen extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={Style.container} behavior="height">
+      <View style={Style.container}>
         <View style={Style.formContainer}>
           <TextInput
             autoCorrect={false}
@@ -51,7 +51,7 @@ class CreateChatScreen extends React.Component {
           <Text style={Style.text}>Or give your chat link to someone:</Text>
           {this.renderMyChatLink()}
         </View>
-      </KeyboardAvoidingView>
+      </View>
     )
   }
 }
