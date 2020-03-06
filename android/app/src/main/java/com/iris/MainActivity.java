@@ -1,4 +1,4 @@
-package com.iris;
+package to.iris;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

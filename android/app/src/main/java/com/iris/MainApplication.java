@@ -1,4 +1,4 @@
-package com.iris;
+package to.iris;
 
 import android.app.Application;
 
