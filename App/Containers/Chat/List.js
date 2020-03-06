@@ -28,6 +28,7 @@ class ChatListScreen extends React.Component {
 
   componentDidMount() {
     gun.user().get('profile').get('name').on(name => this.props.navigation.setParams({name}))
+    console.log('session', JSON.stringify(session))
     Chat.getChats(session.gun, session.keypair, pub => {
       console.log('got chat', pub);
       this.setState(previousState => {

@@ -1,4 +1,4 @@
-import {Gun, SEA} from 'gun';
+import {Gun, SEA} from 'gun/browser.ios.js';
 import GunOpen from 'gun/lib/open';
 import GunLoad from 'gun/lib/load';
 

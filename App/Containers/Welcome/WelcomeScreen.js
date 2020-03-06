@@ -29,10 +29,10 @@ class WelcomeScreen extends React.Component {
     const logInWithKey = key => {
       gunInstance.user().auth(key)
       irisLogin(gunInstance, key, {name})
+      this.props.navigation.navigate('ChatListScreen')
     }
     Key.generate().then(logInWithKey)
-    this.props.navigation.navigate('ChatListScreen')
-    Notifications.requestPermissions()
+    Notifications.registerRemoteNotifications()
     Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
       console.log(`Notification received in foreground: ${notification.title} : ${notification.body}`);
       completion({alert: false, sound: false, badge: false});
@@ -41,6 +41,8 @@ class WelcomeScreen extends React.Component {
       console.log(`Notification opened: ${notification.payload}`);
       completion();
     })
+
+    /*
     Notifications.postLocalNotification({
     	body: "Local notificiation!",
     	title: "Local Notification Title",
@@ -49,6 +51,7 @@ class WelcomeScreen extends React.Component {
     	userInfo: { },
       date: new Date(Date.now() + (20 * 1000))
     })
+    */
   }
 
   render() {
