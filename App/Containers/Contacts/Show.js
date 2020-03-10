@@ -46,7 +46,7 @@ class ContactScreen extends React.Component {
         }}
         />)
     } else if (this.state.identicon) {
-      return (<SvgXml xml={this.state.identicon} width="100%" height="100%" />)
+      return (<SvgXml xml={this.state.identicon} width="300" height="300" />)
     }
   }
 
