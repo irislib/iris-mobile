@@ -1,7 +1,9 @@
 import React from 'react'
-import { Platform, Text, KeyboardAvoidingView, View, Button, TextInput } from 'react-native'
+import { Platform, Text, KeyboardAvoidingView, View, TextInput } from 'react-native'
+import Button from 'App/Components/Button'
 import { PropTypes } from 'prop-types'
 import Style from './LoginScreenStyle'
+import ApplicationStyles from 'App/Theme/ApplicationStyles'
 import { Images } from 'App/Theme'
 import gun from 'App/Services/GunService'
 import { login as irisLogin } from 'App/Services/IrisService'
@@ -48,7 +50,7 @@ class LoginScreen extends React.Component {
             onChangeText={(key) => this.logInWithKey(key)}
           />
           <Text style={Style.text}>or</Text>
-          <Button title="Scan QR" color="white" onPress={() => this.props.navigation.navigate('ScanPrivateKeyScreen')} />
+          <Button text="Scan QR" onPress={() => this.props.navigation.navigate('ScanPrivateKeyScreen')} />
         </View>
       </KeyboardAvoidingView>
     )

@@ -1,6 +1,7 @@
 import React from 'react'
 import QRCode from 'react-native-qrcode-svg'
-import { Platform, Text, KeyboardAvoidingView, View, Button, TextInput } from 'react-native'
+import { Platform, Text, View, TextInput } from 'react-native'
+import Button from 'App/Components/Button'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'
@@ -27,7 +28,7 @@ class CreateChatScreen extends React.Component {
           value={this.link}
           size={300}
         />
-        <Button title="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
+        <Button text="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
         <Text>But beware of sharing it publicly: you might get spammed with message requests.</Text>
       </View>
     ) : (
@@ -43,11 +44,10 @@ class CreateChatScreen extends React.Component {
             autoCorrect={false}
             style={Style.text}
             editable
-            autoFocus
             placeholder="Paste someone's chat link"
             onChangeText={(link) => this.openChat(link)}
           />
-          <Button title="Scan QR" onPress={() => this.props.navigation.navigate('ScanChatLinkScreen')} />
+          <Button text="Scan QR" onPress={() => this.props.navigation.navigate('ScanChatLinkScreen')} />
           <Text style={Style.text}>Or give your chat link to someone:</Text>
           {this.renderMyChatLink()}
         </View>

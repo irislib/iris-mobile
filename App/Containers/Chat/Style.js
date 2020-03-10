@@ -8,6 +8,9 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  headerLeft: {
+    padding: 16
+  },
   item: {
     marginVertical: 8,
     marginHorizontal: 16,

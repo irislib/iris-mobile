@@ -16,7 +16,8 @@ class ScanChatLinkScreen extends React.Component {
   onSuccess = (e) => {
     if (e.data.indexOf('http') === 0 && e.data.indexOf('s=') > 0 && e.data.indexOf('k=') > 0) {
       const chat = new Chat({key: session.keypair, gun: gunInstance, chatLink: e.data})
-      this.props.navigation.navigate('ChatListScreen')
+      const pub = Object.keys(chat.secrets)[0]
+      this.props.navigation.navigate('ChatScreen', {pub})
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, View, Clipboard, Text } from 'react-native'
+import { View, Clipboard, Text } from 'react-native'
+import Button from 'App/Components/Button'
 import QRCode from 'react-native-qrcode-svg'
 import Style from './SettingsScreenStyle'
 import gun from 'App/Services/GunService'
@@ -25,7 +26,7 @@ class ShowPrivateKeyScreen extends React.Component {
           value={this.state.privateKey}
           size={300}
         />
-        <Button title="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
+        <Button text="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
         <Text>DANGER! Private key is used to log in to your account. Don't give or show your private key to anyone!</Text>
       </View>
     ) : (

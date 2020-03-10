@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
+import Style from './Style'
 import NavigationService from 'App/Services/NavigationService'
 import gun from 'App/Services/GunService'
 import { session } from 'App/Services/IrisService'
@@ -15,7 +16,9 @@ class ChatScreen extends React.Component {
     const {state} = navigation;
     return {
       headerTitle: (
-        <Button title={state.params.title || ''} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub })} />
+        <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub })}>
+          <Text>{state.params.title || ''}</Text>
+        </TouchableOpacity>
       )
     }
   }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { ActivityIndicator, Text, View, Button, Image, FlatList, ListItem, TouchableWithoutFeedback } from 'react-native'
+import { ActivityIndicator, Text, View, Image, FlatList, TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
+import ListItem from 'App/Components/ListItem'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'
@@ -19,9 +20,11 @@ class ChatListScreen extends React.Component {
     const {state} = navigation;
     return {
       title: 'Chats',
-      headerTitle: null,
+      headerTitle: '',
       headerLeft: (
-        <Button title={(state.params && state.params.name) || ''} onPress={() => NavigationService.navigate('SettingsScreen')} />
+        <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('SettingsScreen')}>
+          <Text>{(state.params && state.params.name) || ''}</Text>
+        </TouchableOpacity>
       )
     }
   }
@@ -38,6 +41,7 @@ class ChatListScreen extends React.Component {
         const newState = {...previousState}
         const chat = {};
         chat.pub = pub
+        chat.name = ''
         newState.chats[pub] = chat
         newState.chatsArr = Object.values(newState.chats)
         return newState
@@ -56,19 +60,11 @@ class ChatListScreen extends React.Component {
   render() {
     return (
       <View style={Style.container}>
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('CreateChatScreen')}>
-          <View style={Style.item}>
-            <Text style={Style.text}>New chat</Text>
-          </View>
-        </TouchableWithoutFeedback>
+        <ListItem text="New chat" onPress={() => this.props.navigation.navigate('CreateChatScreen')} />
         <FlatList
           data={this.state.chatsArr}
           renderItem={({ item }) => (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub })}>
-              <View style={Style.item}>
-                <Text style={Style.text}>{item.name}</Text>
-              </View>
-            </TouchableWithoutFeedback>
+            <ListItem text={item.name} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub })} />
           )}
           keyExtractor={item => item.pub}
         />

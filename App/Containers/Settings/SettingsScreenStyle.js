@@ -6,7 +6,6 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    alignItems: 'center'
   },
   item: {
     marginVertical: 8,

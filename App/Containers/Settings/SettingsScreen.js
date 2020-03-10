@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button, View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import Style from './SettingsScreenStyle'
+import ListItem from 'App/Components/ListItem'
 import gun from 'App/Services/GunService'
 import { logout as irisLogout } from 'App/Services/IrisService'
 import Navigation from 'App/Services/NavigationService'
@@ -22,12 +23,8 @@ class SettingsScreen extends React.Component {
   render() {
     return (
       <View style={Style.container}>
-        <View style={Style.item}>
-          <Button title="Log out" onPress={() => this.logout()} />
-        </View>
-        <View style={Style.item}>
-          <Button title="Show private key" onPress={() => Navigation.navigate('ShowPrivateKeyScreen') } />
-        </View>
+        <ListItem text="Log out" onPress={() => this.logout()} />
+        <ListItem text="Show private key" onPress={() => Navigation.navigate('ShowPrivateKeyScreen') } />
       </View>
     )
   }
