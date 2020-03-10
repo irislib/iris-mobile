@@ -42,6 +42,7 @@ class ChatScreen extends React.Component {
     setName(pub.substr(0, 6) + '...')
     gun.user(pub).get('profile').get('name').on(setName)
     const onMessage = (msg, info) => {
+      this.chat.setMyMsgsLastSeenTime()
       this.setState(previousState => {
         msg.createdAt = new Date(msg.time)
         msg._id = msg.time + (info.selfAuthored ? 0 : 1)
@@ -55,6 +56,7 @@ class ChatScreen extends React.Component {
       });
     }
     this.chat = new Chat({gun, key: session.keypair, participants: pub, onMessage});
+    this.chat.setMyMsgsLastSeenTime()
     /*
     this.setState({
       messages: [
@@ -87,6 +89,7 @@ class ChatScreen extends React.Component {
     return (
       <GiftedChat
         messages={this.state.messages}
+        renderAvatar={null}
         onSend={messages => this.onSend(messages)}
         user={{
           _id: 1,

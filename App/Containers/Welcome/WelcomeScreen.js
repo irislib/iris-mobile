@@ -7,7 +7,7 @@ import { Images } from 'App/Theme'
 import gunInstance from 'App/Services/GunService'
 import gun from 'gun';
 import { login as irisLogin } from 'App/Services/IrisService'
-import { Key, Message } from 'iris-lib'
+import { Key, Message, Chat } from 'iris-lib'
 import {Notifications} from 'react-native-notifications'
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -29,6 +29,8 @@ class WelcomeScreen extends React.Component {
     gunInstance.user().auth(key)
     irisLogin(gunInstance, key, {name})
     this.props.navigation.navigate('ChatListScreen')
+
+    Chat.setOnline(gunInstance, true)
 
     Notifications.registerRemoteNotifications()
     Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
