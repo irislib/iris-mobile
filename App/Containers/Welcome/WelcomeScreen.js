@@ -29,6 +29,27 @@ class WelcomeScreen extends React.Component {
     gunInstance.user().auth(key)
     irisLogin(gunInstance, key, {name})
     this.props.navigation.navigate('ChatListScreen')
+
+    Notifications.registerRemoteNotifications()
+    Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
+      console.log(`Notification received in foreground: ${notification}`);
+      completion({alert: false, sound: false, badge: false});
+    })
+    Notifications.events().registerNotificationOpened((notification: Notification, completion) => {
+      console.log(`Notification opened: ${notification}`);
+      completion();
+    })
+
+    /*
+    Notifications.postLocalNotification({
+      body: "Local notificiation!",
+      title: "Local Notification Title",
+      sound: "chime.aiff",
+      category: "SOME_CATEGORY",
+      userInfo: { },
+      fireDate: new Date(Date.now() + (10 * 1000))
+    })
+    */
   }
 
   logInAsNewUser() {
@@ -42,26 +63,6 @@ class WelcomeScreen extends React.Component {
     Key.generate().then(key => {
       this.logInWithKey(key, name)
     })
-    Notifications.registerRemoteNotifications()
-    Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
-      console.log(`Notification received in foreground: ${notification.title} : ${notification.body}`);
-      completion({alert: false, sound: false, badge: false});
-    })
-    Notifications.events().registerNotificationOpened((notification: Notification, completion) => {
-      console.log(`Notification opened: ${notification.payload}`);
-      completion();
-    })
-
-    /*
-    Notifications.postLocalNotification({
-    	body: "Local notificiation!",
-    	title: "Local Notification Title",
-    	sound: "chime.aiff",
-    	category: "SOME_CATEGORY",
-    	userInfo: { },
-      date: new Date(Date.now() + (20 * 1000))
-    })
-    */
   }
 
   render() {
@@ -71,7 +72,6 @@ class WelcomeScreen extends React.Component {
           <Image style={Style.logo} source={Images.icon} resizeMode={'contain'} />
         </View>
         <View style={Style.formContainer}>
-          <Text style={Style.welcome}>Welcome to Iris!</Text>
           <TextInput
             autoCapitalize="words"
             autoCorrect={false}
