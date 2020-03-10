@@ -48,7 +48,7 @@ class CreateChatScreen extends React.Component {
             onChangeText={(link) => this.openChat(link)}
           />
           <Button text="Scan QR" onPress={() => this.props.navigation.navigate('ScanChatLinkScreen')} />
-          <Text style={Style.text}>Or give your chat link to someone:</Text>
+          <Text style={Style.margins}>Or give your chat link to someone:</Text>
           {this.renderMyChatLink()}
         </View>
       </View>

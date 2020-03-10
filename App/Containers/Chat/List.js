@@ -1,6 +1,7 @@
 import React from 'react'
 import { ActivityIndicator, Text, View, Image, FlatList, TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import ListItem from 'App/Components/ListItem'
+import ChatListItem from 'App/Components/ChatListItem'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'
@@ -31,7 +32,6 @@ class ChatListScreen extends React.Component {
 
   componentDidMount() {
     gun.user().get('profile').get('name').on(name => this.props.navigation.setParams({name}))
-    console.log('session', JSON.stringify(session))
     Chat.getChats(session.gun, session.keypair, pub => {
       console.log('got chat', pub);
       this.setState(previousState => {
@@ -39,7 +39,14 @@ class ChatListScreen extends React.Component {
           return
         }
         const newState = {...previousState}
-        const chat = {};
+        const chat = new Chat({gun: session.gun, key: session.keypair, participants: pub})
+        chat.getLatestMsg(msg => {
+          this.setState(previousState => {
+            const newState = {...previousState}
+            newState.chats[pub].latest = msg
+            return newState
+          })
+        })
         chat.pub = pub
         chat.name = ''
         newState.chats[pub] = chat
@@ -59,12 +66,12 @@ class ChatListScreen extends React.Component {
 
   render() {
     return (
-      <View style={Style.container}>
+      <View style={Style.listContainer}>
         <ListItem text="New chat" onPress={() => this.props.navigation.navigate('CreateChatScreen')} />
         <FlatList
           data={this.state.chatsArr}
           renderItem={({ item }) => (
-            <ListItem text={item.name} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub })} />
+            <ChatListItem chat={item} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub })} />
           )}
           keyExtractor={item => item.pub}
         />

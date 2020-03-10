@@ -6,7 +6,13 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    justifyContent: 'center',
+    padding: 16,
+  },
+  margins: {
+    marginBottom: 16,
+  },
+  listContainer: {
+    flex: 1,
   },
   headerLeft: {
     padding: 16

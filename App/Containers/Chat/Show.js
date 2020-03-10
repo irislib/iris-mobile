@@ -39,7 +39,7 @@ class ChatScreen extends React.Component {
         return newState
       })
     }
-    setName(pub.substr(0, 6) + '...')
+    setName('')
     gun.user(pub).get('profile').get('name').on(setName)
     const onMessage = (msg, info) => {
       this.chat.setMyMsgsLastSeenTime()

@@ -34,9 +34,14 @@ export default {
       textAlign: 'center',
     },
     container: {
-      padding:10,
+      paddingTop:10,
+      paddingBottom:10,
+      paddingLeft:20,
+      paddingRight:20,
       backgroundColor: '#74d5f1',
-      borderRadius:5,
+      borderRadius:50,
+      marginTop: 16,
+      marginBottom: 16,
     }
   }
 }
