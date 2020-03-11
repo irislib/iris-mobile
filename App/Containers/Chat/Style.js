@@ -7,6 +7,7 @@ export default StyleSheet.create({
     ...ApplicationStyles.screen.container,
     flex: 1,
     padding: 16,
+    alignItems: 'flex-start',
   },
   margins: {
     marginBottom: 16,
@@ -60,8 +61,6 @@ export default StyleSheet.create({
     height: '70%',
   },
   formContainer: {
-    marginBottom: 50,
-    flex: 1,
-    justifyContent: 'center',
+
   },
 })
