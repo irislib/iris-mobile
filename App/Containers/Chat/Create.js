@@ -7,7 +7,7 @@ import Style from './Style'
 import { Images } from 'App/Theme'
 import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'
-import { iris } from 'App/Services/IrisService'
+import { session } from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 
@@ -17,7 +17,11 @@ class CreateChatScreen extends React.Component {
   }
 
   openChat(link) {
-    console.log('openChat', link)
+    if (link.indexOf('http') === 0 && link.indexOf('chatWith')) {
+      const chat = new Chat({key: session.keypair, gun, chatLink: link})
+      const pub = Object.keys(chat.secrets)[0]
+      this.props.navigation.navigate('ChatScreen', {pub})
+    }
   }
 
   renderMyChatLink() {

@@ -15,7 +15,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 class ScanChatLinkScreen extends React.Component {
   onSuccess = (e) => {
     console.log('scanned chat link', e);
-    if (e.data.indexOf('http') === 0 && e.data.indexOf('s=') > 0 && e.data.indexOf('k=') > 0) {
+    if (e.data.indexOf('http') === 0 && e.data.indexOf('chatWith')) {
       const chat = new Chat({key: session.keypair, gun: gunInstance, chatLink: e.data})
       const pub = Object.keys(chat.secrets)[0]
       this.props.navigation.navigate('ChatScreen', {pub})
