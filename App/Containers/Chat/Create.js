@@ -1,6 +1,6 @@
 import React from 'react'
 import QRCode from 'react-native-qrcode-svg'
-import { Platform, Text, View, TextInput } from 'react-native'
+import { Platform, Text, View, TextInput, Clipboard } from 'react-native'
 import Button from 'App/Components/Button'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
@@ -28,7 +28,7 @@ class CreateChatScreen extends React.Component {
           value={this.link}
           size={300}
         />
-        <Button text="Copy to clipboard" onPress={() => Clipboard.setString(this.state.privateKey)} />
+        <Button text="Copy to clipboard" onPress={() => Clipboard.setString(this.link)} />
         <Text>But beware of sharing it publicly: you might get spammed with message requests.</Text>
       </View>
     ) : (

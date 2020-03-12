@@ -7,7 +7,6 @@ export default StyleSheet.create({
     ...ApplicationStyles.screen.container,
     flex: 1,
     padding: 16,
-    alignItems: 'flex-start',
   },
   margins: {
     marginBottom: 16,
