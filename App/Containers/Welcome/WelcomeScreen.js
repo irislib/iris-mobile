@@ -10,7 +10,7 @@ import { login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message, Chat } from 'iris-lib'
 import {Notifications} from 'react-native-notifications'
 import AsyncStorage from '@react-native-community/async-storage';
-import BackgroundFetch from "react-native-background-fetch";
+// import BackgroundFetch from "react-native-background-fetch";
 
 class WelcomeScreen extends React.Component {
   componentDidMount() {
@@ -21,6 +21,7 @@ class WelcomeScreen extends React.Component {
       }
     })
 
+    /*
     BackgroundFetch.configure({
       minimumFetchInterval: 15,     // <-- minutes (15 is minimum allowed)
       // Android options
@@ -63,7 +64,7 @@ class WelcomeScreen extends React.Component {
           console.log("BackgroundFetch is enabled");
           break;
       }
-    });
+    });*/
   }
 
   static navigationOptions = {

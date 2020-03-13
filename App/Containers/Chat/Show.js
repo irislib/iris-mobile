@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity, Text, View } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import Style from './Style'
@@ -87,14 +87,16 @@ class ChatScreen extends React.Component {
 
   render() {
     return (
-      <GiftedChat
-        messages={this.state.messages}
-        renderAvatar={null}
-        onSend={messages => this.onSend(messages)}
-        user={{
-          _id: 1,
-        }}
-      />
+      <View style={{backgroundColor: '#ffffff', flex: 1}}> // #e5ddd5
+        <GiftedChat
+          messages={this.state.messages}
+          renderAvatar={null}
+          onSend={messages => this.onSend(messages)}
+          user={{
+            _id: 1,
+          }}
+        />
+      </View>
     )
   }
 }

@@ -131,8 +131,8 @@ android {
         applicationId "to.iris.Iris"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1010
-        versionName "1.01"
+        versionCode 1020
+        versionName "1.02"
         missingDimensionStrategy 'react-native-camera', 'general'
     }
     splits {
