@@ -85,9 +85,9 @@ class ChatScreen extends React.Component {
     })
   }
 
-  render() {
+  render() { // backgroundColor: '#e5ddd5'
     return (
-      <View style={{backgroundColor: '#ffffff', flex: 1}}> // #e5ddd5
+      <View style={{backgroundColor: '#ffffff', flex: 1}}>
         <GiftedChat
           messages={this.state.messages}
           renderAvatar={null}
