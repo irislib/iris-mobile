@@ -663,6 +663,11 @@
     "@types/hoist-non-react-statics" "^3.3.1"
     hoist-non-react-statics "^3.3.0"
 
+"@gooddollar/gun-asyncstorage@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@gooddollar/gun-asyncstorage/-/gun-asyncstorage-1.0.3.tgz#45fb8e63e636a394a2cde723a72b02597786a8d8"
+  integrity sha512-KcF4fWsjHFLgmcXxyRoX1Cx5XXuDGC2im+oG7czp7e13otPiL6m468omFqnXxBhGxJgUPOwrGc3cWZ7MAwjY/g==
+
 "@gooddollar/react-native-webview-crypto@^0.0.20":
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/@gooddollar/react-native-webview-crypto/-/react-native-webview-crypto-0.0.20.tgz#523d0e1fcc10e3d91c17b369be332cc954aa819e"
