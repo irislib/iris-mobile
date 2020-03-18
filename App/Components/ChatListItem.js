@@ -8,6 +8,12 @@ import { util } from 'iris-lib'
 class ChatListItem extends Component {
 	render() {
 		const { chat, onPress } = this.props;
+		let latestTimeText = ''
+		if (chat.latest) {
+			const now = new Date()
+			latestTimeText = util.getDaySeparatorText(chat.latest.time, chat.latest.time.toLocaleDateString({dateStyle:'short'}))
+			if (latestTimeText === 'today') { latestTimeText = util.formatTime(chat.latest.time) }
+		}
 		return (
 		  <TouchableWithoutFeedback onPress={() => onPress()}>
        <View style={ApplicationStyles.listItem.item}>
@@ -16,7 +22,7 @@ class ChatListItem extends Component {
            <Text style={ApplicationStyles.listItem.name}>{chat.name || ''}</Text>
 					 <View style={ApplicationStyles.listItem.messageRow}>
              <Text style={{...ApplicationStyles.listItem.message, flex: 1}}>{(chat.latest && chat.latest.text) || ''}</Text>
-					   <Text style={ApplicationStyles.listItem.message}>{(chat.latest && chat.latest.time && util.formatDate(chat.latest.time)) || ''}</Text>
+					   <Text style={ApplicationStyles.listItem.message}>{latestTimeText}</Text>
 					 </View>
 			   </View>
        </View>

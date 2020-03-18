@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TextInput, Image } from 'react-native'
+import { View, Text, TextInput, Image, Dimensions } from 'react-native'
 import Style from './Style'
 import gun from 'App/Services/GunService'
 import Button from 'App/Components/Button'
@@ -34,8 +34,8 @@ class ContactScreen extends React.Component {
   render() {
     const pub = this.props.navigation.getParam('pub', '')
     return (
-      <View style={Style.container}>
-        <Identicon pub={pub} width={300} style={{borderRadius: 0}} />
+      <View style={{...Style.container, padding: 0}}>
+        <Identicon pub={pub} width={Dimensions.get('window').width} style={{borderRadius: 0}} />
         <Button text="Chat" onPress={() => this.props.navigation.navigate('ChatScreen', {pub:this.state.pub})} />
         <Button text="Share Contact" onPress={() => this.props.navigation.navigate('ShareContactScreen', {pub:this.state.pub})} />
       </View>

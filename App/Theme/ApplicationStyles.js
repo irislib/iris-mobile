@@ -14,6 +14,7 @@ export default {
   },
   identicon: {
     overflow: 'hidden',
+    maxWidth: '100%',
   },
   listItem: {
     item: {

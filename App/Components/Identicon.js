@@ -39,6 +39,7 @@ class Identicon extends Component {
         style={{
           width: this.props.width,
           height: this.props.width,
+          maxWidth: '100%',
           resizeMode: 'contain',
         }}
         source={{

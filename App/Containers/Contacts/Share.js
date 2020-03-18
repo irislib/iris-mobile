@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, View, Clipboard } from 'react-native'
+import { View, Clipboard } from 'react-native'
+import Button from 'App/Components/Button'
 import QRCode from 'react-native-qrcode-svg'
 import Style from './Style'
 
@@ -26,7 +27,7 @@ class ShareContactScreen extends React.Component {
           value={this.state.url}
           size={300}
         />
-        <Button title="Copy link" onPress={() => Clipboard.setString(this.state.url)} />
+        <Button text="Copy link" onPress={() => Clipboard.setString(this.state.url)} />
       </View>
     ) : (
       <View></View>
