@@ -13,7 +13,6 @@ export default {
     },
   },
   identicon: {
-    borderRadius: 50,
     overflow: 'hidden',
   },
   listItem: {
@@ -38,6 +37,9 @@ export default {
       fontSize: Fonts.size.medium,
       textAlign: 'left',
       fontWeight: 'bold',
+    },
+    messageRow: {
+      flexDirection: 'row',
     },
     message: {
       ...Fonts.style.normal,

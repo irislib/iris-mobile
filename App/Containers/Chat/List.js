@@ -14,6 +14,10 @@ import NavigationService from 'App/Services/NavigationService'
 import { SvgXml } from 'react-native-svg'
 import Svg from 'App/Components/Svg'
 
+function sortChatsByLatest(chatsArr) {
+  return chatsArr.sort((a, b) => ((b.latest && b.latest.time) || Infinity) - ((a.latest && a.latest.time) || Infinity))
+}
+
 class ChatListScreen extends React.Component {
   state = {
     chats: {},
@@ -47,21 +51,23 @@ class ChatListScreen extends React.Component {
         chat.getLatestMsg(msg => {
           this.setState(previousState => {
             const newState = {...previousState}
+            msg.time = new Date(msg.time)
             newState.chats[pub].latest = msg
+            newState.chatsArr = sortChatsByLatest(newState.chatsArr)
             return newState
           })
         })
         chat.pub = pub
         chat.name = ''
         newState.chats[pub] = chat
-        newState.chatsArr = Object.values(newState.chats)
+        newState.chatsArr = sortChatsByLatest(Object.values(newState.chats))
         return newState
       })
       gun.user(pub).get('profile').get('name').on(name => {
         this.setState(previousState => {
           const newState = {...previousState}
           newState.chats[pub].name = name
-          newState.chatsArr = Object.values(newState.chats)
+          newState.chatsArr = sortChatsByLatest(Object.values(newState.chats))
           return newState
         })
       })
@@ -80,7 +86,7 @@ class ChatListScreen extends React.Component {
         <FlatList
           data={this.state.chatsArr}
           renderItem={({ item }) => (
-            <ChatListItem chat={item} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub })} />
+            <ChatListItem chat={item} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub, title: item.name })} />
           )}
           keyExtractor={item => item.pub}
         />

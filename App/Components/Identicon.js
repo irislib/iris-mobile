@@ -25,7 +25,7 @@ class Identicon extends Component {
 
   render() {
     return (
-      <View style={{...ApplicationStyles.identicon, ...this.props.style, width: this.props.width, height: this.props.height}}>
+      <View style={{...ApplicationStyles.identicon, width: this.props.width, height: this.props.height, borderRadius: this.props.width / 2 + 2, ...this.props.style}}>
         {this.renderImage()}
       </View>
     )

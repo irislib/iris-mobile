@@ -17,7 +17,7 @@ class ChatScreen extends React.Component {
     const {state} = navigation;
     return {
       headerTitle: (
-        <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub })}>
+        <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub, title: state.params.title || '' })}>
           <Identicon pub={state.params.pub} width={40} style={Style.headerIdenticon} />
           <Text>{state.params.title || ''}</Text>
         </TouchableOpacity>
