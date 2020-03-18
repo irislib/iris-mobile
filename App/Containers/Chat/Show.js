@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, View } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
 import { Chat } from 'iris-lib'
 import Style from './Style'
+import Identicon from 'App/Components/Identicon'
 import NavigationService from 'App/Services/NavigationService'
 import gun from 'App/Services/GunService'
 import { session } from 'App/Services/IrisService'
@@ -17,6 +18,7 @@ class ChatScreen extends React.Component {
     return {
       headerTitle: (
         <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub })}>
+          <Identicon pub={state.params.pub} width={40} style={Style.headerIdenticon} />
           <Text>{state.params.title || ''}</Text>
         </TouchableOpacity>
       )

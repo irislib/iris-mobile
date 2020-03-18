@@ -12,17 +12,37 @@ export default {
       flex: 1,
     },
   },
+  identicon: {
+    borderRadius: 50,
+    overflow: 'hidden',
+  },
   listItem: {
     item: {
-      marginVertical: 8,
-      marginHorizontal: 16,
-      padding: 16,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    identicon: {
+      marginHorizontal: 8,
+    },
+    text: {
+      flex: 1,
+      paddingTop: 16,
+      paddingBottom: 16,
+      paddingLeft: 8,
+      paddingRight: 8,
       borderBottomWidth: 1,
       borderColor: '#eee',
     },
-    text: {
+    name: {
       ...Fonts.style.normal,
       fontSize: Fonts.size.medium,
+      textAlign: 'left',
+      fontWeight: 'bold',
+    },
+    message: {
+      ...Fonts.style.normal,
+      color: '#777',
+      fontSize: Fonts.size.small,
       textAlign: 'left',
       marginBottom: 5,
     },

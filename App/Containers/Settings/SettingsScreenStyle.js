@@ -6,6 +6,7 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
+    padding: 16,
   },
   item: {
     marginVertical: 8,

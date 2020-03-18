@@ -2,14 +2,17 @@ import React from 'react'
 import { ActivityIndicator, Text, View, Image, FlatList, TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import ListItem from 'App/Components/ListItem'
 import ChatListItem from 'App/Components/ChatListItem'
+import Identicon from 'App/Components/Identicon'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
-import { Images } from 'App/Theme'
+import { ApplicationStyles, Images } from 'App/Theme'
 import { Chat } from 'iris-lib'
 import gun from 'App/Services/GunService'
 import { session } from 'App/Services/IrisService'
 import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
+import { SvgXml } from 'react-native-svg'
+import Svg from 'App/Components/Svg'
 
 class ChatListScreen extends React.Component {
   state = {
@@ -24,6 +27,7 @@ class ChatListScreen extends React.Component {
       headerTitle: '',
       headerLeft: (
         <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('SettingsScreen')}>
+          <Identicon pub={session.keypair.pub} width={40} style={Style.headerIdenticon} />
           <Text>{(state.params && state.params.name) || ''}</Text>
         </TouchableOpacity>
       )
@@ -67,7 +71,12 @@ class ChatListScreen extends React.Component {
   render() {
     return (
       <View style={Style.listContainer}>
-        <ListItem text="New chat" onPress={() => this.props.navigation.navigate('CreateChatScreen')} />
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('CreateChatScreen')}>
+         <View style={{...ApplicationStyles.listItem.item, paddingLeft: 16, paddingRight: 16, borderBottomWidth: 1, borderColor: '#eee'}}>
+           <SvgXml xml={Svg.newChat} width={15} height={15} />
+           <Text style={{...ApplicationStyles.listItem.text, borderBottomWidth: 0}}>New chat</Text>
+         </View>
+  		  </TouchableWithoutFeedback>
         <FlatList
           data={this.state.chatsArr}
           renderItem={({ item }) => (

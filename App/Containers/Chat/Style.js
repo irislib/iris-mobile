@@ -15,7 +15,12 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerLeft: {
-    padding: 16
+    padding: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerIdenticon: {
+    marginRight: 16,
   },
   item: {
     marginVertical: 8,
