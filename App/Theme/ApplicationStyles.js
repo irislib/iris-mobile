@@ -53,6 +53,14 @@ export default {
       textAlign: 'left',
       marginBottom: 5,
     },
+    typing: {
+      ...Fonts.style.normal,
+      color: '#05b246',
+      fontSize: Fonts.size.small,
+      fontWeight: 'bold',
+      textAlign: 'left',
+      marginBottom: 5,
+    },
   },
   button: {
     text: {

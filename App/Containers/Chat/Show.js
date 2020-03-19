@@ -22,7 +22,7 @@ class ChatScreen extends React.Component {
           <Identicon pub={state.params.pub} width={40} style={Style.headerIdenticon} />
           <View>
             <Text>{state.params.title || ''}</Text>
-            <Text style={Style.lastActive}>{state.params.onlineStatus && (state.params.onlineStatus.isOnline && 'Online' || 'last active ' + util.formatDate(new Date(state.params.onlineStatus.lastActive)))}</Text>
+            <Text style={Style.lastActive}>{(state.params.isTyping && 'typing...') || state.params.onlineStatus && (state.params.onlineStatus.isOnline && 'online' || 'last active ' + util.formatDate(new Date(state.params.onlineStatus.lastActive)))}</Text>
           </View>
         </TouchableOpacity>
       )
@@ -63,6 +63,9 @@ class ChatScreen extends React.Component {
     }
     this.chat = new Chat({gun, key: session.keypair, participants: pub, onMessage});
     this.chat.setMyMsgsLastSeenTime()
+    this.chat.getTyping(isTyping => {
+      this.props.navigation.setParams({isTyping})
+    })
     Chat.getOnline(gun, pub, onlineStatus => {
       this.props.navigation.setParams({onlineStatus})
       this.setState(previousState => {
@@ -106,6 +109,9 @@ class ChatScreen extends React.Component {
           onSend={messages => this.onSend(messages)}
           user={{
             _id: 1,
+          }}
+          onInputTextChanged={text => {
+            this.chat.setTyping(text.length > 0)
           }}
         />
       </View>

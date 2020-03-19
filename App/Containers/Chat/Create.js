@@ -13,7 +13,7 @@ import NavigationService from 'App/Services/NavigationService'
 
 class CreateChatScreen extends React.Component {
   static navigationOptions = {
-    title: 'Create chat',
+    title: 'New chat',
   }
 
   openChat(link) {

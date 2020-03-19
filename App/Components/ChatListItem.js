@@ -6,6 +6,18 @@ import Identicon from './Identicon'
 import { util } from 'iris-lib'
 
 class ChatListItem extends Component {
+	state = {
+		isTyping: false,
+	}
+
+	componentDidMount() {
+		this.props.chat.getTyping(isTyping => {
+			this.setState(previousState => {
+				return {...previousState, isTyping}
+			})
+		})
+	}
+
 	render() {
 		const { chat, onPress } = this.props;
 		let latestTimeText = ''
@@ -24,7 +36,7 @@ class ChatListItem extends Component {
 						 <Text style={ApplicationStyles.listItem.message}>{latestTimeText}</Text>
 					 </View>
 					 <View style={ApplicationStyles.listItem.messageRow}>
-             <Text style={{...ApplicationStyles.listItem.message, flex: 1}}>{(chat.latest && chat.latest.text) || ''}</Text>
+					 	 <Text style={this.state.isTyping ? {...ApplicationStyles.listItem.typing, flex: 1} : {...ApplicationStyles.listItem.message, flex: 1}}>{(this.state.isTyping && 'Typing...') || (chat.latest && chat.latest.text) || ''}</Text>
 					 </View>
 			   </View>
        </View>
