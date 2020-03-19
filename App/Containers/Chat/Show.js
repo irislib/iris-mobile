@@ -50,6 +50,8 @@ class ChatScreen extends React.Component {
     const onMessage = (msg, info) => {
       this.chat.setMyMsgsLastSeenTime()
       this.setState(previousState => {
+        msg.sent = msg.time <= (previousState.onlineStatus && previousState.onlineStatus.lastActive)
+        msg.received = msg.time <= previousState.lastSeenTime
         msg.createdAt = new Date(msg.time)
         msg._id = msg.time + (info.selfAuthored ? 0 : 1)
         msg.user = {
@@ -58,13 +60,20 @@ class ChatScreen extends React.Component {
         }
         newMessages = previousState.messages.concat(msg)
         newMessages.sort((a, b) => b.createdAt - a.createdAt)
-        return { messages: newMessages }
+        return { ...previousState, messages: newMessages }
       });
     }
     this.chat = new Chat({gun, key: session.keypair, participants: pub, onMessage});
     this.chat.setMyMsgsLastSeenTime()
     this.chat.getTyping(isTyping => {
       this.props.navigation.setParams({isTyping})
+    })
+    this.chat.getTheirMsgsLastSeenTime(lastSeenTime => {
+      this.setState(previousState => {
+        const newMessages = [...previousState.messages]
+        newMessages.forEach(m => m.received = m.sent = (m.time <= lastSeenTime))
+        return { ...previousState, messages: newMessages, lastSeenTime }
+      })
     })
     Chat.getOnline(gun, pub, onlineStatus => {
       this.props.navigation.setParams({onlineStatus})
