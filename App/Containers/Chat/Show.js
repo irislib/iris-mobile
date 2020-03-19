@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
 import { GiftedChat } from 'react-native-gifted-chat'
-import { Chat } from 'iris-lib'
+import { Chat, util } from 'iris-lib'
 import Style from './Style'
 import Identicon from 'App/Components/Identicon'
 import NavigationService from 'App/Services/NavigationService'
@@ -11,6 +11,7 @@ import { session } from 'App/Services/IrisService'
 class ChatScreen extends React.Component {
   state = {
     messages: [],
+    onlineStatus: {},
   }
 
   static navigationOptions = ({navigation}) => {
@@ -19,7 +20,10 @@ class ChatScreen extends React.Component {
       headerTitle: (
         <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('ContactScreen', { pub: state.params.pub, title: state.params.title || '' })}>
           <Identicon pub={state.params.pub} width={40} style={Style.headerIdenticon} />
-          <Text>{state.params.title || ''}</Text>
+          <View>
+            <Text>{state.params.title || ''}</Text>
+            <Text style={Style.lastActive}>{state.params.onlineStatus && (state.params.onlineStatus.isOnline && 'Online' || 'last active ' + util.formatDate(new Date(state.params.onlineStatus.lastActive)))}</Text>
+          </View>
         </TouchableOpacity>
       )
     }
@@ -59,6 +63,12 @@ class ChatScreen extends React.Component {
     }
     this.chat = new Chat({gun, key: session.keypair, participants: pub, onMessage});
     this.chat.setMyMsgsLastSeenTime()
+    Chat.getOnline(gun, pub, onlineStatus => {
+      this.props.navigation.setParams({onlineStatus})
+      this.setState(previousState => {
+        return {...previousState, onlineStatus}
+      })
+    })
     /*
     this.setState({
       messages: [

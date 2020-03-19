@@ -38,8 +38,12 @@ export default {
       fontSize: Fonts.size.medium,
       textAlign: 'left',
       fontWeight: 'bold',
+      flex: 1,
     },
     messageRow: {
+      flexDirection: 'row',
+    },
+    nameRow: {
       flexDirection: 'row',
     },
     message: {

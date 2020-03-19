@@ -14,8 +14,12 @@ export default StyleSheet.create({
   listContainer: {
     flex: 1,
   },
+  lastActive: {
+    fontSize: Fonts.size.small,
+    color: '#999',
+  },
   headerLeft: {
-    padding: 16,
+    marginHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',
   },
