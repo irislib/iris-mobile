@@ -19,6 +19,7 @@ export default StyleSheet.create({
     color: '#999',
   },
   headerLeft: {
+    flex: 1,
     marginHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',

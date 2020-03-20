@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { TouchableWithoutFeedback, Text, StyleSheet, View } from 'react-native';
 import ApplicationStyles from 'App/Theme/ApplicationStyles'
 import Identicon from './Identicon'
-import { util } from 'iris-lib'
+import { util, Chat } from 'iris-lib'
+import Svg from 'App/Components/Svg'
+import { SvgXml } from 'react-native-svg'
+import gun from 'App/Services/GunService'
 
 class ChatListItem extends Component {
 	state = {
@@ -11,11 +14,24 @@ class ChatListItem extends Component {
 	}
 
 	componentDidMount() {
-		this.props.chat.getTyping(isTyping => {
-			this.setState(previousState => {
-				return {...previousState, isTyping}
-			})
-		})
+		const chat = this.props.chat
+		chat.getTheirMsgsLastSeenTime(lastSeenTime => this.setState(prev => {return {...prev, lastSeenTime}}))
+		Chat.getOnline(gun, chat.pub, isOnline => this.setState(prev => {return {...prev, isOnline}}))
+		chat.getTyping(isTyping => this.setState(prev => {return {...prev, isTyping}}))
+	}
+
+	renderLatestSeen() {
+		const chat = this.props.chat
+		if (chat.latest && !this.state.isTyping) {
+			const t = chat.latest.time.toISOString()
+			if (this.state.lastSeenTime >= t) {
+				return (<View style={ApplicationStyles.listItem.checkmark}><SvgXml xml={Svg.seenCheckmark} width={15} height={15} /></View>)
+			} else if (this.state.isOnline && this.state.isOnline.lastActive >= t) {
+				return (<View style={ApplicationStyles.listItem.checkmark}><SvgXml xml={Svg.deliveredCheckmark} width={15} height={15} /></View>)
+			} else {
+				return (<View style={ApplicationStyles.listItem.checkmark}><SvgXml xml={Svg.sentCheckmark} width={15} height={15} /></View>)
+			}
+		} else return (<Text></Text>)
 	}
 
 	render() {
@@ -36,6 +52,7 @@ class ChatListItem extends Component {
 						 <Text style={ApplicationStyles.listItem.message}>{latestTimeText}</Text>
 					 </View>
 					 <View style={ApplicationStyles.listItem.messageRow}>
+					 	 {this.renderLatestSeen()}
 					 	 <Text style={this.state.isTyping ? {...ApplicationStyles.listItem.typing, flex: 1} : {...ApplicationStyles.listItem.message, flex: 1}}>{(this.state.isTyping && 'Typing...') || (chat.latest && chat.latest.text) || ''}</Text>
 					 </View>
 			   </View>

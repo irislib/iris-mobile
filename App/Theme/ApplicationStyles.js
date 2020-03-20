@@ -17,6 +17,9 @@ export default {
     maxWidth: '100%',
   },
   listItem: {
+    checkmark: {
+      marginRight: 4
+    },
     item: {
       flexDirection: 'row',
       alignItems: 'center',
