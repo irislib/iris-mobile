@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActivityIndicator, Text, View, Button, Image, FlatList, TouchableWithoutFeedback, TextInput } from 'react-native'
+import { ActivityIndicator, Text, View, Button, Image, TextInput } from 'react-native'
 import { PropTypes } from 'prop-types'
 import Style from './Style'
 import { Images } from 'App/Theme'

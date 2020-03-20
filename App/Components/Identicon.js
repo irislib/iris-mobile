@@ -16,11 +16,7 @@ class Identicon extends Component {
     new Attribute({type:'keyID', value: this.props.pub}).identiconXml({width:this.props.width}).then(xml => {
       this.setState({identicon: xml})
     })
-    gun.user(this.props.pub).get('profile').get('photo').on(photo => {
-      if (photo && photo.length) {
-        this.setState({photo})
-      }
-    })
+    gun.user(this.props.pub).get('profile').get('photo').on(photo => this.setState({photo}))
   }
 
   render() {

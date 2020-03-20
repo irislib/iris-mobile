@@ -12,6 +12,8 @@ import LoginScreen from 'App/Containers/Login/LoginScreen'
 import WelcomeScreen from 'App/Containers/Welcome/WelcomeScreen'
 import SettingsScreen from 'App/Containers/Settings/SettingsScreen'
 import ShowPrivateKeyScreen from 'App/Containers/Settings/ShowPrivateKeyScreen'
+import EditProfileScreen from 'App/Containers/Settings/EditProfileScreen'
+import EditPhotoScreen from 'App/Containers/Settings/EditPhotoScreen'
 import ScanChatLinkScreen from 'App/Containers/ScanChatLink/Scan'
 import ScanPrivateKeyScreen from 'App/Containers/ScanPrivateKey/Scan'
 
@@ -33,6 +35,8 @@ const StackNavigator = createStackNavigator(
     ShareContactScreen,
     LoginScreen,
     SettingsScreen,
+    EditProfileScreen,
+    EditPhotoScreen,
     ShowPrivateKeyScreen,
     ScanChatLinkScreen,
     ScanPrivateKeyScreen,

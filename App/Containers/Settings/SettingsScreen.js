@@ -23,8 +23,9 @@ class SettingsScreen extends React.Component {
   render() {
     return (
       <View style={Style.container}>
-        <ListItem text="Log out" onPress={() => this.logout()} />
-        <ListItem text="Show private key" onPress={() => Navigation.navigate('ShowPrivateKeyScreen') } />
+        <ListItem style={Style.item} text="Edit profile" onPress={() => Navigation.navigate('EditProfileScreen') } />
+        <ListItem style={Style.item} text="Show private key" onPress={() => Navigation.navigate('ShowPrivateKeyScreen') } />
+        <ListItem style={Style.item} text="Log out" onPress={() => this.logout()} />
       </View>
     )
   }
