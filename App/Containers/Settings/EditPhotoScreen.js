@@ -22,7 +22,7 @@ class EditPhotoScreen extends React.Component {
     gun.user().get('profile').get('photo').on(photo => this.setState({photo}))
   }
 
-  setPhoto() {
+  choosePhoto() {
     ImagePicker.openPicker({
       width: 400,
       height: 400,
@@ -33,16 +33,25 @@ class EditPhotoScreen extends React.Component {
     })
   }
 
-  renderChangeOrSetPhoto() {
+  takePhoto() {
+    ImagePicker.openCamera({
+      width: 400,
+      height: 400,
+      cropping: true,
+      includeBase64: true,
+      useFrontCamera: true,
+    }).then(image => {
+      gun.user().get('profile').get('photo').put(`data:${image.mime};base64,${image.data}`)
+    });
+  }
+
+  renderDeletePhoto() {
     return this.state.photo ? (
       <View>
-        <Button text="Change photo" onPress={this.setPhoto} />
         <Button text="Delete photo" onPress={() => {gun.user().get('profile').get('photo').put(null)}} />
       </View>
     ) : (
-      <View>
-        <Button text="Set photo" onPress={this.setPhoto} />
-      </View>
+      <View></View>
     )
   }
 
@@ -51,7 +60,9 @@ class EditPhotoScreen extends React.Component {
       <View>
         <Identicon pub={session.keypair.pub} width={Dimensions.get('window').width} style={{borderRadius: 0}} />
         <View style={{padding: 16}}>
-          {this.renderChangeOrSetPhoto()}
+          <Button text="Take photo" onPress={this.takePhoto} />
+          <Button text="Choose photo" onPress={this.choosePhoto} />
+          {this.renderDeletePhoto()}
         </View>
       </View>
     )
