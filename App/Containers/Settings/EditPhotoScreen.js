@@ -7,7 +7,7 @@ import QRCode from 'react-native-qrcode-svg'
 import Style from './SettingsScreenStyle'
 import gun from 'App/Services/GunService'
 import { session } from 'App/Services/IrisService'
-//import ImagePicker from 'react-native-image-crop-picker'
+import ImagePicker from 'react-native-image-crop-picker'
 
 class EditPhotoScreen extends React.Component {
   state = {
@@ -23,15 +23,14 @@ class EditPhotoScreen extends React.Component {
   }
 
   setPhoto() {
-    /*
     ImagePicker.openPicker({
       width: 400,
       height: 400,
-      cropping: true
+      cropping: true,
+      includeBase64: true,
     }).then(image => {
-      console.log(image);
+      gun.user().get('profile').get('photo').put(`data:${image.mime};base64,${image.data}`)
     })
-    */
   }
 
   renderChangeOrSetPhoto() {
