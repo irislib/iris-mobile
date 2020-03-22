@@ -10,14 +10,21 @@ import { login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message, Chat } from 'iris-lib'
 import {Notifications} from 'react-native-notifications'
 import AsyncStorage from '@react-native-community/async-storage';
+import Navigation from 'App/Services/NavigationService'
 // import BackgroundFetch from "react-native-background-fetch";
 
 class WelcomeScreen extends React.Component {
+  state = {
+    isLoading: true,
+  }
+
   componentDidMount() {
     AsyncStorage.getItem('iris_keypair').then(val => {
       if (val && val.length) {
         const key = JSON.parse(val)
         this.logInWithKey(key)
+      } else {
+        this.setState({isLoading: false})
       }
     })
 
@@ -72,9 +79,10 @@ class WelcomeScreen extends React.Component {
   }
 
   logInWithKey(key, name) {
+    console.log('logInWithKey')
     gunInstance.user().auth(key)
     irisLogin(gunInstance, key, {name})
-    this.props.navigation.navigate('ChatListScreen')
+    Navigation.navigateAndReset('ChatListScreen')
 
     Chat.setOnline(gunInstance, true)
 
@@ -114,7 +122,7 @@ class WelcomeScreen extends React.Component {
   }
 
   render() {
-    return (
+    return this.state.isLoading ? (<View style={Style.container}></View>) : (
       <KeyboardAvoidingView style={Style.container} behavior="height">
         <View style={Style.logoContainer}>
           <Image style={Style.logo} source={Images.icon} resizeMode={'contain'} />

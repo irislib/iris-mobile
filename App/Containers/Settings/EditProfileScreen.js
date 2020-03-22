@@ -30,7 +30,7 @@ class EditProfileScreen extends React.Component {
           <Text style={{color: 'blue', marginTop: 4}}>Edit</Text>
         </TouchableOpacity>
         <TextInput
-          style={{borderTopWidth: 1, borderBottomWidth: 1, borderColor: '#eee'}}
+          style={{borderTopWidth: 1, borderBottomWidth: 1, borderColor: '#eee', padding: 8}}
           autoCapitalize="words"
           autoCorrect={false}
           keyboardType="default"
@@ -44,7 +44,7 @@ class EditProfileScreen extends React.Component {
           }}
           value={this.state.name}
         />
-        <Text style={{fontWeight: 'bold', marginTop: 16}}>About</Text>
+        <Text style={{fontWeight: 'bold', marginTop: 16, marginBottom: 8}}>About</Text>
         <TextInput
           autoCorrect={false}
           keyboardType="default"
