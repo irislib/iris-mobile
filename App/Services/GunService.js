@@ -1,4 +1,6 @@
-import {Gun, SEA} from 'gun/browser.ios.js';
+const NUG = require('gun/browser.ios.js');
+const Gun = NUG.Gun;
+const SEA = Nug.SEA;
 import GunOpen from 'gun/lib/open';
 import GunLoad from 'gun/lib/load';
 

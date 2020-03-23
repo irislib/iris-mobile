@@ -31,6 +31,7 @@
     "react-native-qrcode-scanner": "mmalmi/react-native-qrcode-scanner",
     "react-native-qrcode-svg": "^5.2.0",
     "react-native-svg": "^9.12.0",
+    "react-native-webview": "^9.0.1",
     "react-navigation": "^3.11.2"
   },
   "devDependencies": {
