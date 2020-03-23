@@ -1,3 +1,4 @@
+import WebviewCrypto from '@gooddollar/react-native-webview-crypto'
 import React, { Component } from 'react'
 import NavigationService from 'App/Services/NavigationService'
 import AppNavigator from 'App/Navigators/AppNavigator'
@@ -13,6 +14,7 @@ class RootScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <WebviewCrypto/>
         <AppNavigator
           // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
           ref={(navigatorRef) => {
