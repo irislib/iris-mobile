@@ -10,6 +10,7 @@ import { SvgXml } from 'react-native-svg';
 class ContactScreen extends React.Component {
   state = {
     name: '',
+    about: '',
   }
 
   static navigationOptions = ({navigation}) => {
@@ -24,10 +25,11 @@ class ContactScreen extends React.Component {
     const pub = this.props.navigation.getParam('pub', '')
     this.setState({name: '', pub})
     gun.user(pub).get('profile').get('name').on(name => {
-      if (name) {
-        this.props.navigation.setParams({title: name})
-        this.setState({name})
-      }
+      this.props.navigation.setParams({title: name})
+      this.setState({name})
+    })
+    gun.user(pub).get('profile').get('about').on(about => {
+      this.setState({about})
     })
   }
 
@@ -36,6 +38,7 @@ class ContactScreen extends React.Component {
     return (
       <View style={{...Style.container, padding: 0}}>
         <Identicon pub={pub} width={Dimensions.get('window').width} style={{borderRadius: 0}} />
+        <Text style={{marginVertical: 8}}>{this.state.about}</Text>
         <Button text="Chat" onPress={() => this.props.navigation.navigate('ChatScreen', {pub:this.state.pub})} />
         <Button text="Share Contact" onPress={() => this.props.navigation.navigate('ShareContactScreen', {pub:this.state.pub})} />
       </View>
