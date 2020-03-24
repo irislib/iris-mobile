@@ -69,6 +69,8 @@ PODS:
     - React
   - react-native-camera/RN (3.8.0):
     - React
+  - react-native-get-random-values (1.3.1):
+    - React
   - react-native-notifications (3.1.2):
     - React
   - react-native-randombytes (3.5.3):
@@ -128,6 +130,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-camera (from `../node_modules/react-native-camera`)
+  - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
   - react-native-notifications (from `../node_modules/react-native-notifications`)
   - react-native-randombytes (from `../node_modules/react-native-randombytes`)
   - react-native-webview (from `../node_modules/react-native-webview`)
@@ -182,6 +185,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-camera:
     :path: "../node_modules/react-native-camera"
+  react-native-get-random-values:
+    :path: "../node_modules/react-native-get-random-values"
   react-native-notifications:
     :path: "../node_modules/react-native-notifications"
   react-native-randombytes:
@@ -237,6 +242,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-camera: 21cf4ed26cf432ceb1fae959aa6924943fd6f714
+  react-native-get-random-values: 148a42f97f2ce180a52d219144e83c278d4fe24b
   react-native-notifications: f56a12d741eeb2fd4d7a418a4689111c50f7cd72
   react-native-randombytes: 3638d24759d67c68f6ccba60c52a7a8a8faa6a23
   react-native-webview: 3f2f9934ba8633a170d209cb84045b6cbc5e5f48
