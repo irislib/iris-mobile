@@ -21,8 +21,12 @@ class WelcomeScreen extends React.Component {
   componentDidMount() {
     AsyncStorage.getItem('iris_keypair').then(val => {
       if (val && val.length) {
-        const key = JSON.parse(val)
-        this.logInWithKey(key)
+        try {
+          const key = JSON.parse(val)
+          this.logInWithKey(key)
+        } catch (e) {
+          this.setState({isLoading: false})
+        }
       } else {
         this.setState({isLoading: false})
       }

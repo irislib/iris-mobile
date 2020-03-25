@@ -13,10 +13,14 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 class ScanPrivateKeyScreen extends React.Component {
   onSuccess = (e) => {
-    const key = JSON.parse(e.data)
-    gunInstance.user().auth(key)
-    login(gunInstance, key)
-    this.props.navigation.navigate('ChatListScreen')
+    try {
+      const key = JSON.parse(e.data)
+      gunInstance.user().auth(key)
+      login(gunInstance, key)
+      this.props.navigation.navigate('ChatListScreen')
+    } catch (err) {
+      
+    }
   }
 
   render() {
