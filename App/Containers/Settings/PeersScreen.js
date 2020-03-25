@@ -21,7 +21,8 @@ class PeersScreen extends React.Component {
 
   componentDidMount() {
     const getPeers = () => {
-      this.setState({peers: Object.values(gun.back('opt.peers'))})
+      const peers = Object.values(gun.back('opt.peers'))
+      this.setState({peers})
     }
     getPeers()
     this.interval = setInterval(getPeers, 2000)
@@ -31,9 +32,11 @@ class PeersScreen extends React.Component {
     clearInterval(this.interval)
   }
 
-  addPeer(url) {
-    if (url && url.length) {
-      gun.opt({peers: [this.state.newPeerUrl]});
+  addPeer() {
+    const url = this.state.newPeerUrl.trim()
+    if (url.indexOf('https://') === 0) {
+      gun.opt({peers: [url]});
+      this.setState({newPeerUrl: ''})
     }
   }
 
@@ -49,7 +52,7 @@ class PeersScreen extends React.Component {
           data={this.state.peers}
           renderItem={({ item }) => (
             <View style={{borderBottomWidth: 1, borderColor: '#eee', paddingVertical: 16}}>
-              <Text>{item.url}</Text>
+              <Text><Text style={{fontWeight: 'bold', color: (item.wire && item.wire.hied === 'hi') ? 'green' : 'red'}}>{item.wire && item.wire.hied === 'hi' ? '✓' : '✗'}</Text> {item.url}</Text>
               <Button text="Remove" onPress={() => {this.disconnectPeer(item)}}/>
             </View>
           )}
@@ -63,11 +66,12 @@ class PeersScreen extends React.Component {
           editable
           maxLength={1000}
           placeholder="Peer url"
+          value={this.state.newPeerUrl}
           onChangeText={(newPeerUrl) => {
             this.setState({newPeerUrl})
           }}
         />
-        <Button text="Add peer" onPress={() => {}} />
+        <Button text="Add peer" onPress={() => { this.addPeer() }} />
       </KeyboardAvoidingView>
     )
   }
