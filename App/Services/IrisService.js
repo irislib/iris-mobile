@@ -5,14 +5,14 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export const session = {};
 
-export const login = (gun, keypair, profile) => {
+export const login = (gun, keypair, name) => {
   AsyncStorage.setItem('iris_keypair', JSON.stringify(keypair))
   session.gun = gun
   session.keypair = keypair
   session.user = gun.user()
   session.user.auth(keypair)
-  if (profile) {
-    session.user.get('profile').put(profile)
+  if (name) {
+    session.user.get('profile').get('name').put(name)
   }
 }
 

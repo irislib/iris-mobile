@@ -13,9 +13,10 @@ import { Identity } from 'iris-lib'
 import NavigationService from 'App/Services/NavigationService'
 import { SvgXml } from 'react-native-svg'
 import Svg from 'App/Components/Svg'
+import {Notifications} from 'react-native-notifications'
 
 function sortChatsByLatest(chatsArr) {
-  return chatsArr.sort((a, b) => ((b.latest && b.latest.time) || Infinity) - ((a.latest && a.latest.time) || Infinity))
+  return chatsArr.sort((a, b) => ((b.latest && b.latest.date) || Infinity) - ((a.latest && a.latest.date) || Infinity))
 }
 
 class ChatListScreen extends React.Component {
@@ -38,6 +39,32 @@ class ChatListScreen extends React.Component {
     }
   }
 
+  checkNotify(chat) { // TODO: move to iris-lib
+    function check() {
+      return chat.latest && (!chat.myLastSeenTime || (chat.myLastSeenTime < chat.latest.time))
+    }
+    function notify() {
+      Notifications.postLocalNotification({
+        body: chat.latest && chat.latest.text || '',
+        title: chat.name,
+        sound: "chime.aiff",
+        silent: false,
+        category: "SOME_CATEGORY",
+        userInfo: { },
+      })
+    }
+    if (check()) {
+      chat.hasUnseen = true
+      if (!chat.myLastSeenTime) {
+        setTimeout(() => { // give it a chance to get chat.myLastSeenTime
+          if (check()) { notify() }
+        }, 2000);
+      } else { notify() }
+    } else {
+      chat.hasUnseen = false
+    }
+  }
+
   componentDidMount() {
     gun.user().get('profile').get('name').on(name => this.props.navigation.setParams({name}))
     Chat.getChats(session.gun, session.keypair, pub => {
@@ -48,17 +75,23 @@ class ChatListScreen extends React.Component {
         }
         const newState = {...previousState}
         const chat = new Chat({gun: session.gun, key: session.keypair, participants: pub})
-        chat.getLatestMsg(msg => {
+        chat.pub = pub
+        chat.name = ''
+        chat.getLatestMsg((msg, info) => {
           this.setState(previousState => {
             const newState = {...previousState}
-            msg.time = new Date(msg.time)
-            newState.chats[pub].latest = msg
+            msg.date = new Date(msg.time)
+            msg.info = info
+            chat.latest = msg
             newState.chatsArr = sortChatsByLatest(newState.chatsArr)
+            this.checkNotify(chat)
             return newState
           })
         })
-        chat.pub = pub
-        chat.name = ''
+        chat.getMyMsgsLastSeenTime(lastSeenTime => {
+          chat.myLastSeenTime = lastSeenTime
+          this.checkNotify(chat)
+        })
         newState.chats[pub] = chat
         newState.chatsArr = sortChatsByLatest(Object.values(newState.chats))
         return newState
@@ -71,6 +104,16 @@ class ChatListScreen extends React.Component {
           return newState
         })
       })
+    })
+
+    Notifications.registerRemoteNotifications()
+    Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
+      console.log(`Notification received in foreground: ${JSON.stringify(notification)}`);
+      completion({alert: true, sound: true, badge: true});
+    })
+    Notifications.events().registerNotificationOpened((notification: Notification, completion) => {
+      console.log(`Notification opened: ${notification}`);
+      completion();
     })
   }
 
@@ -86,7 +129,7 @@ class ChatListScreen extends React.Component {
         <FlatList
           data={this.state.chatsArr}
           renderItem={({ item }) => (
-            <ChatListItem chat={item} onPress={() => this.props.navigation.navigate('ChatScreen', { pub: item.pub, title: item.name })} />
+            <ChatListItem chat={item} />
           )}
           keyExtractor={item => item.pub}
         />

@@ -8,7 +8,7 @@ import gunInstance from 'App/Services/GunService'
 import gun from 'gun';
 import { login as irisLogin } from 'App/Services/IrisService'
 import { Key, Message, Chat } from 'iris-lib'
-//import {Notifications} from 'react-native-notifications'
+import {Notifications} from 'react-native-notifications'
 import AsyncStorage from '@react-native-community/async-storage';
 import Navigation from 'App/Services/NavigationService'
 // import BackgroundFetch from "react-native-background-fetch";
@@ -83,35 +83,11 @@ class WelcomeScreen extends React.Component {
   }
 
   logInWithKey(key, name) {
-    console.log('logInWithKey')
     gunInstance.user().auth(key)
-    irisLogin(gunInstance, key, {name})
+    irisLogin(gunInstance, key, name)
     Navigation.navigateAndReset('ChatListScreen')
 
     Chat.setOnline(gunInstance, true)
-
-    /*
-    Notifications.registerRemoteNotifications()
-    Notifications.events().registerNotificationReceivedForeground((notification: Notification, completion) => {
-      console.log(`Notification received in foreground: ${notification}`);
-      completion({alert: false, sound: false, badge: false});
-    })
-    Notifications.events().registerNotificationOpened((notification: Notification, completion) => {
-      console.log(`Notification opened: ${notification}`);
-      completion();
-    })
-    */
-
-    /*
-    Notifications.postLocalNotification({
-      body: "Local notificiation!",
-      title: "Local Notification Title",
-      sound: "chime.aiff",
-      category: "SOME_CATEGORY",
-      userInfo: { },
-      fireDate: new Date(Date.now() + (10 * 1000))
-    })
-    */
   }
 
   logInAsNewUser() {

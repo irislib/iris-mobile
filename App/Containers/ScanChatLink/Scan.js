@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types'
 import { Chat } from 'iris-lib'
 import styles from './Style'
 import gunInstance from 'App/Services/GunService'
-import { login, session } from 'App/Services/IrisService'
+import { session } from 'App/Services/IrisService'
 import {
   StyleSheet,
   Text,

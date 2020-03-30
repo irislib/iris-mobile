@@ -56,7 +56,6 @@ class PeersScreen extends React.Component {
               <Button text="Remove" onPress={() => {this.disconnectPeer(item)}}/>
             </View>
           )}
-          keyExtractor={item => item.url}
         />
         <TextInput
           autoCapitalize="none"
