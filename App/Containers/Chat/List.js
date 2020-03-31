@@ -14,6 +14,7 @@ import NavigationService from 'App/Services/NavigationService'
 import { SvgXml } from 'react-native-svg'
 import Svg from 'App/Components/Svg'
 import {Notifications} from 'react-native-notifications'
+import BackgroundFetch from "react-native-background-fetch";
 
 function sortChatsByLatest(chatsArr) {
   return chatsArr.sort((a, b) => ((b.latest && b.latest.date) || Infinity) - ((a.latest && a.latest.date) || Infinity))
@@ -115,6 +116,49 @@ class ChatListScreen extends React.Component {
       console.log(`Notification opened: ${notification}`);
       completion();
     })
+
+    BackgroundFetch.configure({
+      minimumFetchInterval: 15,     // <-- minutes (15 is minimum allowed)
+      // Android options
+      forceAlarmManager: false,     // <-- Set true to bypass JobScheduler.
+      stopOnTerminate: false,
+      startOnBoot: true,
+      requiredNetworkType: BackgroundFetch.NETWORK_TYPE_NONE, // Default
+      requiresCharging: false,      // Default
+      requiresDeviceIdle: false,    // Default
+      requiresBatteryNotLow: false, // Default
+      requiresStorageNotLow: false  // Default
+    }, async (taskId) => {
+      console.log("[js] Received background-fetch event: ", taskId);
+      Notifications.postLocalNotification({
+        body: "Local notificiation!",
+        title: "Local Notification Title",
+        sound: "chime.aiff",
+        category: "SOME_CATEGORY",
+        userInfo: { },
+      })
+      // Required: Signal completion of your task to native code
+      // If you fail to do this, the OS can terminate your app
+      // or assign battery-blame for consuming too much background-time
+      BackgroundFetch.finish(taskId);
+    }, (error) => {
+      console.log("[js] RNBackgroundFetch failed to start");
+    });
+
+    // Optional: Query the authorization status.
+    BackgroundFetch.status((status) => {
+      switch(status) {
+        case BackgroundFetch.STATUS_RESTRICTED:
+          console.log("BackgroundFetch restricted");
+          break;
+        case BackgroundFetch.STATUS_DENIED:
+          console.log("BackgroundFetch denied");
+          break;
+        case BackgroundFetch.STATUS_AVAILABLE:
+          console.log("BackgroundFetch is enabled");
+          break;
+      }
+    });
   }
 
   render() {
