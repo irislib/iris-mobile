@@ -131,8 +131,8 @@ android {
         applicationId "to.iris.Iris"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1040
-        versionName "1.04"
+        versionCode 1060
+        versionName "1.06"
         missingDimensionStrategy 'react-native-camera', 'general'
         vectorDrawables.useSupportLibrary = true
     }

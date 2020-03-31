@@ -33,7 +33,7 @@ class ChatListScreen extends React.Component {
       headerTitle: '',
       headerLeft: (
         <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('SettingsScreen')}>
-          <Identicon pub={session.keypair.pub} width={40} style={Style.headerIdenticon} />
+          {session.keypair && session.keypair.pub ? <Identicon pub={session.keypair.pub} width={40} style={Style.headerIdenticon} /> : <Text></Text>}
           <Text>{(state.params && state.params.name) || ''}</Text>
         </TouchableOpacity>
       )

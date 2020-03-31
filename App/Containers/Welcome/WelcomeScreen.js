@@ -6,7 +6,7 @@ import Button from 'App/Components/Button'
 import { Images } from 'App/Theme'
 import gunInstance from 'App/Services/GunService'
 import gun from 'gun';
-import { login as irisLogin } from 'App/Services/IrisService'
+import { login as irisLogin, isValidKey } from 'App/Services/IrisService'
 import { Key, Message, Chat } from 'iris-lib'
 import {Notifications} from 'react-native-notifications'
 import AsyncStorage from '@react-native-community/async-storage';
@@ -22,7 +22,11 @@ class WelcomeScreen extends React.Component {
       if (val && val.length) {
         try {
           const key = JSON.parse(val)
-          this.logInWithKey(key)
+          if (isValidKey(key)) {
+            this.logInWithKey(key)
+          } else {
+            this.setState({isLoading: false})
+          }
         } catch (e) {
           this.setState({isLoading: false})
         }

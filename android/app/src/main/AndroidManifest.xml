@@ -8,14 +8,6 @@
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.front" android:required="false" />
 
-    <application>
-      <meta-data android:name="com.bugsnag.android.DETECT_NDK_CRASHES" android:value="true"/>
-    </application>
-
-    <application>
-      <meta-data android:name="com.bugsnag.android.API_KEY" android:value="bb9298087eb87d2c78929a201ddb3e88"/>
-    </application>
-
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -35,6 +27,8 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+      <meta-data android:name="com.bugsnag.android.API_KEY" android:value="bb9298087eb87d2c78929a201ddb3e88"/>
+      <meta-data android:name="com.bugsnag.android.DETECT_NDK_CRASHES" android:value="true"/>
     </application>
 
 </manifest>
