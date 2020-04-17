@@ -15,7 +15,7 @@
   "dependencies": {
     "@gooddollar/gun-asyncstorage": "^1.0.3",
     "@gooddollar/react-native-webview-crypto": "^0.0.20",
-    "@react-native-community/async-storage": "^1.6.2",
+    "@react-native-community/async-storage": "^1.9.0",
     "axios": "^0.19.0",
     "bugsnag-react-native": "^2.23.6",
     "gun": "mmalmi/gun#GoodDollar-master",
