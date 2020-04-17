@@ -25,7 +25,11 @@ class CreateChatScreen extends React.Component {
   }
 
   renderMyChatLink() {
-    this.link = 'https://iris.to/?chatWith=IYEdAtGVO5-le8Rmw9L8JAA0Saq19KqYwtCJ3ALU4AU.rtH2wVhsYIXVm1nsZBft7QPvAZMByXAQ5QDSaxOzbQA'
+    if (session.chatLinks && Object.values(session.chatLinks).length) {
+      this.link = Object.values(session.chatLinks)[0]
+    } else {
+      this.link = 'https://iris.to/?chatWith=' + (session && session.keypair && session.keypair.pub)
+    }
     return this.link ? (
       <View>
         <QRCode

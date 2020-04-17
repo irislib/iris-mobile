@@ -9,7 +9,7 @@ import gun from 'gun';
 import { login as irisLogin, isValidKey } from 'App/Services/IrisService'
 import { Key, Message, Chat } from 'iris-lib'
 import {Notifications} from 'react-native-notifications'
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-community/async-storage'
 import Navigation from 'App/Services/NavigationService'
 
 class WelcomeScreen extends React.Component {
@@ -58,6 +58,7 @@ class WelcomeScreen extends React.Component {
     }
     Key.generate().then(key => {
       this.logInWithKey(key, name)
+      Chat.createChatLink(gunInstance, key)
     })
   }
 

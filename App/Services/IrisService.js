@@ -10,10 +10,14 @@ export const login = (gun, keypair, name) => {
   session.keypair = keypair
   session.user = gun.user()
   session.user.auth(keypair)
+  session.chatLinks = {}
   if (name) {
     session.user.get('profile').get('name').put(name)
   }
   AsyncStorage.setItem('iris_keypair', JSON.stringify(keypair))
+  Chat.getMyChatLinks(gun, keypair, undefined, ({url, id}) => {
+    session.chatLinks[id] = url
+  }, true)
 }
 
 export const isValidKey = (key) => {

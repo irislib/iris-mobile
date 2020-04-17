@@ -33,7 +33,7 @@ class ChatListScreen extends React.Component {
       headerTitle: '',
       headerLeft: (
         <TouchableOpacity style={Style.headerLeft} onPress={() => NavigationService.navigate('SettingsScreen')}>
-          {session.keypair && session.keypair.pub ? <Identicon pub={session.keypair.pub} width={40} style={Style.headerIdenticon} /> : <Text></Text>}
+          <Identicon pub={session.keypair.pub} width={40} style={Style.headerIdenticon} />
           <Text>{(state.params && state.params.name) || ''}</Text>
         </TouchableOpacity>
       )
@@ -166,7 +166,6 @@ class ChatListScreen extends React.Component {
       <View style={Style.listContainer}>
         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('CreateChatScreen')}>
          <View style={{...ApplicationStyles.listItem.item, paddingTop: 8, paddingBottom: 8, paddingLeft: 16, paddingRight: 16, borderBottomWidth: 1, borderColor: '#eee'}}>
-           <SvgXml xml={Svg.newChat} width={15} height={15} />
            <Text style={{...ApplicationStyles.listItem.text, borderBottomWidth: 0}}>New chat</Text>
          </View>
   		  </TouchableWithoutFeedback>

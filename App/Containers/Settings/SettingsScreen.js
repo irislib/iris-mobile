@@ -1,7 +1,5 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import { GiftedChat } from 'react-native-gifted-chat'
-import { Chat } from 'iris-lib'
 import Style from './SettingsScreenStyle'
 import ListItem from 'App/Components/ListItem'
 import gun from 'App/Services/GunService'
