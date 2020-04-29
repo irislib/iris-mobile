@@ -16,6 +16,8 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - nodejs-mobile-react-native (0.6.0):
+    - React
   - Permission-Camera (2.0.2):
     - RNPermissions
   - Permission-Notifications (2.0.2):
@@ -107,7 +109,7 @@ PODS:
     - React-Core (= 0.60.5)
   - RNBackgroundFetch (3.0.4):
     - React
-  - RNCAsyncStorage (1.6.2):
+  - RNCAsyncStorage (1.9.0):
     - React
   - RNGestureHandler (1.4.1):
     - React
@@ -128,6 +130,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - nodejs-mobile-react-native (from `../node_modules/nodejs-mobile-react-native`)
   - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera.podspec`)
   - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications.podspec`)
   - React (from `../node_modules/react-native/`)
@@ -176,6 +179,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  nodejs-mobile-react-native:
+    :path: "../node_modules/nodejs-mobile-react-native"
   Permission-Camera:
     :path: "../node_modules/react-native-permissions/ios/Camera.podspec"
   Permission-Notifications:
@@ -245,6 +250,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  nodejs-mobile-react-native: 95ee4e1121b2b0f04cf2a984823d0146115e8c25
   Permission-Camera: 626e0ac1c9e92e680b223522dcf9344bb1041fff
   Permission-Notifications: e48255cd901bf9d294b9833bfaf51b82e8f67a77
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
@@ -271,7 +277,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNBackgroundFetch: 388cf1595934d22fed275b8db9b48a28bb4eb7b6
-  RNCAsyncStorage: 60a80e72d95bf02a01cace55d3697d9724f0d77f
+  RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
   RNImageCropPicker: bfb3ea9c8622f290532e2fe63f369e0d5a52f597
   RNPermissions: 9525b0f4d209fdf9a373d52d1492ae2943e691e5

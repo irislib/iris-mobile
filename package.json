@@ -20,6 +20,7 @@
     "bugsnag-react-native": "^2.23.6",
     "gun": "mmalmi/gun#GoodDollar-master",
     "iris-lib": "irislib/iris-lib#rnsupport",
+    "nodejs-mobile-react-native": "^0.6.0",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
